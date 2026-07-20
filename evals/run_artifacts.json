@@ -1,0 +1,1482 @@
+{
+  "generated_at": "2026-07-19T23:27:40.475166+00:00",
+  "generator_model": "qwen2.5:14b",
+  "reviewer_model": "gemma3:4b",
+  "cases": [
+    {
+      "case_id": 1,
+      "track": "factual",
+      "status": "active",
+      "outcome": "FAIL",
+      "input": "Compare Notion and ClickUp on public API access, official Slack integration, and configurable role-based permissions for a 15-person engineering team. Recommend one, prioritizing API access and permissions.",
+      "assertions": {
+        "all_cells_match_gold": false,
+        "all_polarized_cells_have_quote": true,
+        "quote_must_entail_label": true,
+        "recommendation_must_follow_priority": false
+      },
+      "metrics": {
+        "capability_accuracy": 0.3333333333333333,
+        "hallucination_rate": 0.0,
+        "retrieval_recall": 0.3333333333333333,
+        "grounding_rate": 1.0
+      },
+      "pricing": null,
+      "injection_events": [],
+      "answer": "Capability comparison:\n\n- Notion / public api access: verified_present [E11]\n- ClickUp / public api access: unverified\n- Notion / official slack integration: verified_present [E8]\n- ClickUp / official slack integration: unverified\n- Notion / configurable role based permissions: unverified\n- ClickUp / configurable role based permissions: unverified\n\nRecommendation:\nBased only on the verified capabilities above, Notion has the strongest documented coverage. Confirm every unverified item that matters to your team before deciding.",
+      "final": {
+        "type": "answer",
+        "cells": [
+          {
+            "product": "Notion",
+            "criterion": "public_api_access",
+            "label": "verified_present",
+            "citation_id": "E11",
+            "quote": "The Notion API is a public HTTP API that lets your software integrate with Notion workspaces."
+          },
+          {
+            "product": "ClickUp",
+            "criterion": "public_api_access",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Notion",
+            "criterion": "official_slack_integration",
+            "label": "verified_present",
+            "citation_id": "E8",
+            "quote": "You can send Slack messages to Notion databases and receive Slack notifications for Notion activities."
+          },
+          {
+            "product": "ClickUp",
+            "criterion": "official_slack_integration",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Notion",
+            "criterion": "configurable_role_based_permissions",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "ClickUp",
+            "criterion": "configurable_role_based_permissions",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          }
+        ],
+        "cost": {},
+        "sources": [
+          "https://agentsapis.com/notion-api/",
+          "https://apispine.com/clickup",
+          "https://clearfeed.ai/blogs/clickup-slack-integration-for-improved-efficiency",
+          "https://clickup.app.link/v4vtkbtqHib",
+          "https://clickup.canny.io/public-api",
+          "https://clickup.com/",
+          "https://clickup.com/download",
+          "https://developer.clickup.com/",
+          "https://developer.clickup.com/docs/Getting+Started",
+          "https://developers.notion.com/guides/get-started/authorization",
+          "https://developers.notion.com/guides/get-started/overview",
+          "https://docs.slack.dev/apis/",
+          "https://en.wikipedia.org/wiki/ClickUp",
+          "https://help.clickup.com/hc/en-us/articles/30395368157847-Notion-integration",
+          "https://help.clickup.com/hc/en-us/articles/33507760297495-Slack-Automations",
+          "https://help.clickup.com/hc/en-us/articles/6304922742295-Intro-to-the-integration-with-Slack",
+          "https://latenode.com/integrations/clickup",
+          "https://slack.com/marketplace/A049JV0H0KC-notion",
+          "https://slack.com/marketplace/A3G4A68V9-clickup",
+          "https://sotion.so/blog/notion-slack-integration",
+          "https://thebusinessdive.com/clickup-review",
+          "https://www.notion.com/help/slack"
+        ],
+        "unverified": [
+          "ClickUp / public_api_access",
+          "ClickUp / official_slack_integration",
+          "Notion / configurable_role_based_permissions",
+          "ClickUp / configurable_role_based_permissions"
+        ],
+        "grounding_rate": 1.0
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "source": "https://help.clickup.com/hc/en-us/articles/30395368157847-Notion-integration",
+          "title": "Notion integration – ClickUp Help",
+          "content": "Below is a table of all OAuth scopes for the Notion integration so you can make informed security and compliance decisions before enabling it in your Workspace."
+        },
+        {
+          "id": "E2",
+          "source": "https://developers.notion.com/guides/get-started/authorization",
+          "title": "Authorization - Notion Docs",
+          "content": "Sep 3, 2025 · This guide describes the authorization flows for Notion connections and personal access tokens."
+        },
+        {
+          "id": "E3",
+          "source": "https://developer.clickup.com/docs/Getting+Started",
+          "title": "Get Started with the ClickUp API",
+          "content": "Build your own custom integrations and ClickUp apps with our public Application Programming Interface ( API ). ClickUp API docs can all be executed against your ClickUp account. Eith provide the UI with your personal API key or login and your credentials will be prefilled."
+        },
+        {
+          "id": "E4",
+          "source": "https://developers.notion.com/guides/get-started/overview",
+          "title": "Overview - Notion Docs",
+          "content": "Sep 3, 2025 · Discover what Notion connections are, when to use each type, and what you can build."
+        },
+        {
+          "id": "E5",
+          "source": "https://docs.slack.dev/apis/",
+          "title": "Slack APIs | Slack Developer Docs",
+          "content": "Every Slack app and workflow has access to a range of APIs that provide access to read, write, and update many types of data in Slack . Read on to learn about our core APIs , and discover how to use them to make magic."
+        },
+        {
+          "id": "E6",
+          "source": "https://developers.notion.com/guides/get-started/overview",
+          "title": "fetched page",
+          "content": "Overview - Notion Docs Documentation Index Fetch the complete documentation index at: /llms.txt Use this file to discover all available pages before exploring further. Skip to main content ​ Using Notion API Notion connections let you connect your workspace to external tools and automate workflows through code. With the REST API, you can read, create, and update nearly everything in a workspace — pages, databases, users, comments, and more. When you create a connection, you define what it can do: which API endpoints it can call, what content it can read or write, and how it authenticates. Each connection gets its own credentials and its own set of permissions. ​ What is a Notion connection? A Notion connection — sometimes called an integration — connects your workspace to external apps and tools. That could be a SaaS product, an automation script, or a custom tool you’ve built. Connections are added to Notion workspaces and require explicit permission from users to access Notion pages and databases. Create Notion connections that unlock new possibilities for teams. Notion already has a library of connections you can browse. For developers who want to build their own, Notion supports internal connections, public connections, and personal access tokens — all powered by the same REST API. ​ Connection types Notion supports three authentication models: Internal connections are scoped to a single workspace and use a static API token. They’re ideal for custom automations and workflows — things like syncing data, sending notifications, or building internal dashboards. Public connections use OAuth 2.0 for authentication. At creation time, you choose their installation scope : Any workspace (any Notion user can install; Marketplace-eligible) or Selected workspaces only (restricted to workspaces you select; not Marketplace-eligible). Personal access tokens (PATs) are user-scoped tokens for scripts, CLI workflows, Workers, and tools that should act as one Notion user. A PAT uses the creator’s workspace membership and page permissions. See Personal access tokens . Public connections must undergo a Notion security review before being listed on the Marketplace . You can create and use a public connection without listing it. ​ Comparison Feature Internal connections Public connections Personal access tokens Best for Team-owned automations in one workspace. Apps or services used by many Notion users or workspaces. User-owned scripts, CLI workflows, Workers, and trusted to"
+        },
+        {
+          "id": "E7",
+          "source": "https://developers.notion.com/guides/get-started/authorization",
+          "title": "Authorization - Notion Docs",
+          "content": "Sep 3, 2025 · This guide describes the authorization flows for Notion connections and personal access tokens."
+        },
+        {
+          "id": "E8",
+          "source": "https://www.notion.com/help/slack",
+          "title": "Integrate Slack – Notion Help Center",
+          "content": "You can send Slack messages to Notion databases and receive Slack notifications for Notion activities. Read on to learn about the …"
+        },
+        {
+          "id": "E9",
+          "source": "https://slack.com/marketplace/A049JV0H0KC-notion",
+          "title": "Notion & Slack Integration | Slack Marketplace",
+          "content": "Notion gives you one place to see your work and its context. Project docs, meeting notes, and roadmaps live side by side in Notion, so …"
+        },
+        {
+          "id": "E10",
+          "source": "https://sotion.so/blog/notion-slack-integration",
+          "title": "Master Notion Slack Integration for Your Workflow",
+          "content": "Apr 5, 2026 · Discover how to master the Notion Slack integration. Our guide covers native tools, Zapier, and APIs to connect your …"
+        },
+        {
+          "id": "E11",
+          "source": "https://agentsapis.com/notion-api/",
+          "title": "Notion API - Complete Developer Guide",
+          "content": "The Notion API is a public HTTP API that lets your software integrate with Notion workspaces. You create an integration in Notion, …"
+        },
+        {
+          "id": "E12",
+          "source": "https://apispine.com/clickup",
+          "title": "ClickUp — Project and Task Management Platform · apispine",
+          "content": "ClickUp is a cloud- based work management platform designed to consolidate organizational tools into a single application . It provides a flexible environment for teams to manage projects, track tasks, automate workflows, and collaborate on documents ."
+        },
+        {
+          "id": "E13",
+          "source": "https://clearfeed.ai/blogs/clickup-slack-integration-for-improved-efficiency",
+          "title": "How To Set Up Slack - ClickUp Integration ?",
+          "content": "Connect Slack and ClickUp by using the native integration from ClickUp ’s app center. Add the ClickUp app to Slack , authorize permissions , and select the workspace to sync. Once connected, you can manage ClickUp tasks directly from Slack ."
+        },
+        {
+          "id": "E14",
+          "source": "https://clickup.com/",
+          "title": "clickup .com",
+          "content": "ClickUp ’s official website."
+        },
+        {
+          "id": "E15",
+          "source": "https://latenode.com/integrations/clickup",
+          "title": "ClickUp Integrations : Automate ClickUp Workflows via... | Latenode",
+          "content": "Automate ClickUp workflows — no code needed. Official website. Seamlessly integrate ClickUp with your favorite business tools using Latenode. Automate task management, enhance collaboration, and optimize workflows without any coding."
+        },
+        {
+          "id": "E16",
+          "source": "https://clickup.canny.io/public-api",
+          "title": "Public API | ClickUp",
+          "content": "Both clickup _get_time_entries and clickup _get_task_time_entries are broken due to a tags field type mismatch in the output schema. Root Cause: The ClickUp API returns tags as an array of objects ( [{name, tag_fg, tag_bg, ...}] ), but the MCP output schema defines it as string[] ."
+        },
+        {
+          "id": "E17",
+          "source": "https://en.wikipedia.org/wiki/ClickUp",
+          "title": "ClickUp - Wikipedia",
+          "content": "ClickUp provides a suite for productivity and collaboration tools within a single platform. The software supports task and project …"
+        },
+        {
+          "id": "E18",
+          "source": "https://clickup.com/",
+          "title": "ClickUp ™ | Maximize productivity • Software, AI, and humans converge",
+          "content": "Brain² keeps track of how you like to work, and gets smarter every time you use ClickUp. GPT, Claude Opus, Gemini, and more. …"
+        },
+        {
+          "id": "E19",
+          "source": "https://clickup.com/download",
+          "title": "Download ClickUp ™ for Mac, Windows, iOS & Android",
+          "content": "Download ClickUp on any device and access your work from anywhere. Use ClickUp on mobile, desktop, or add as a Chrome …"
+        },
+        {
+          "id": "E20",
+          "source": "https://clickup.app.link/v4vtkbtqHib",
+          "title": "ClickUp",
+          "content": "Built for teams of all sizes and industries, ClickUp is a powerful productivity platform that helps teams manage tasks, workflows, …"
+        },
+        {
+          "id": "E21",
+          "source": "https://thebusinessdive.com/clickup-review",
+          "title": "My Honest ClickUp Review After Using It For +3 Months (2026)",
+          "content": "There are many noises around ClickUp on the web, and I am here to clear things up. In this ClickUp review, I will share all the …"
+        },
+        {
+          "id": "E22",
+          "source": "https://developer.clickup.com/docs/Getting+Started",
+          "title": "Get Started with the ClickUp API",
+          "content": "Build your own custom integrations and ClickUp apps with our public Application Programming Interface (API). ClickUp API docs can all be executed against your ClickUp account. Eith provide the UI with your personal API key or login and your credentials will be prefilled."
+        },
+        {
+          "id": "E23",
+          "source": "https://developer.clickup.com/",
+          "title": "ClickUp",
+          "content": "ClickUp API empowers you to create custom workflows, integrate seamlessly with your favorite tools, and scale your processes by mapping them directly to ClickUp ."
+        },
+        {
+          "id": "E24",
+          "source": "https://help.clickup.com/hc/en-us/articles/6304922742295-Intro-to-the-integration-with-Slack",
+          "title": "Intro to the integration with Slack - ClickUp Help",
+          "content": "Below is a table of all OAuth scopes for the integration with Slack so you can make informed security and compliance decisions before enabling it in your Workspace."
+        },
+        {
+          "id": "E25",
+          "source": "https://slack.com/marketplace/A3G4A68V9-clickup",
+          "title": "ClickUp & Slack Integration | Slack Marketplace",
+          "content": "Integrate your Slack Workspace with ClickUp today to align your team, stay organized, and get more done without having to switch tabs. Note: The ClickUp integration for Slack is 100% free for all ClickUp Plans, including the Free Forever Plan."
+        },
+        {
+          "id": "E26",
+          "source": "https://help.clickup.com/hc/en-us/articles/33507760297495-Slack-Automations",
+          "title": "Slack Automations – ClickUp Help",
+          "content": "Create Slack Automations to send messages in Slack or trigger Actions in ClickUp .You set up the integration with Slack to use Slack ..."
+        }
+      ],
+      "prices": [],
+      "audit": {
+        "gate1_failed": [],
+        "gate2_failed": [],
+        "unsupported": []
+      },
+      "trace": [
+        "validate: products=['Notion', 'ClickUp'] criteria=['public_api_access', 'official_slack_integration', 'configurable_role_based_permissions'] pricing=False",
+        "plan#1: web_search(Notion ClickUp public API slack integration role based permi)",
+        "act: search 'Notion ClickUp public API slack integrat' -> 5 results",
+        "plan#2: fetch_url(https://developers.notion.com/guides/get-started/overview)",
+        "act: fetch https://developers.notion.com/guides/get -> ok (E6)",
+        "plan#3: web_search(Notion official documentation public API slack integration r)",
+        "act: search 'Notion official documentation public API' -> 5 results",
+        "plan#4: fetch_url(https://developer.clickup.com/docs/Getting+Started)",
+        "act: fetch retry 1 for https://developer.clickup.com/docs/Getti",
+        "act: fetch retry 2 for https://developer.clickup.com/docs/Getti",
+        "act: fetch https://developer.clickup.com/docs/Getti -> FAILED after retries, needs fallback",
+        "plan#5: web_search(ClickUp official documentation public API slack integration )",
+        "act: search 'ClickUp official documentation public AP' -> 5 results",
+        "plan#6: web_search(ClickUp official documentation public API slack integration )",
+        "act: duplicate action skipped (web_search)",
+        "plan#7: web_search(ClickUp official documentation for public API slack integrat)",
+        "act: search 'ClickUp official documentation for publi' -> 5 results",
+        "plan#8: web_search(ClickUp official documentation for public API slack integrat)",
+        "act: duplicate action skipped (web_search)",
+        "plan#9: web_search(ClickUp official documentation for public API slack integrat)",
+        "act: search 'ClickUp official documentation for publi' -> 5 results",
+        "plan#10: web_search(ClickUp official documentation for configurable role based p)",
+        "compare: 6 cells produced",
+        "price: not requested, skipped",
+        "draft: answer written",
+        "verify: gate1 rejected 2, gate2 rejected 0, of 4 asserted",
+        "revise: downgraded 2 unsupported cell(s) to unverified",
+        "verify: gate1 rejected 0, gate2 rejected 0, of 2 asserted",
+        "finalize: answer rendered from verified cells"
+      ],
+      "stats": {
+        "llm_calls": 14,
+        "tool_calls": 9,
+        "steps": 10,
+        "retries": 2,
+        "revisions": 1,
+        "seconds": 33.4
+      }
+    },
+    {
+      "case_id": 2,
+      "track": "factual",
+      "status": "active",
+      "outcome": "PASS",
+      "input": "Compare Asana and Trello on built-in time tracking and workload-capacity views for a small team.",
+      "assertions": {
+        "all_cells_match_gold": true,
+        "no_absence_inferred_from_silence": true,
+        "quote_must_entail_label": true
+      },
+      "metrics": {
+        "capability_accuracy": 1.0,
+        "hallucination_rate": 0.0,
+        "retrieval_recall": 1.0,
+        "grounding_rate": 1.0
+      },
+      "pricing": null,
+      "injection_events": [],
+      "answer": "Capability comparison:\n\n- Asana / built in time tracking: verified_present [E1]\n- Trello / built in time tracking: unverified\n- Asana / workload capacity view: verified_present [E1]\n- Trello / workload capacity view: unverified\n\nRecommendation:\nBased only on the verified capabilities above, Asana has the strongest documented coverage. Confirm every unverified item that matters to your team before deciding.",
+      "final": {
+        "type": "answer",
+        "cells": [
+          {
+            "product": "Asana",
+            "criterion": "built_in_time_tracking",
+            "label": "verified_present",
+            "citation_id": "E1",
+            "quote": "native time tracking"
+          },
+          {
+            "product": "Trello",
+            "criterion": "built_in_time_tracking",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Asana",
+            "criterion": "workload_capacity_view",
+            "label": "verified_present",
+            "citation_id": "E1",
+            "quote": "Workload view , capacity planning"
+          },
+          {
+            "product": "Trello",
+            "criterion": "workload_capacity_view",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          }
+        ],
+        "cost": {},
+        "sources": [
+          "https://asana.com/compare/asana-vs-trello",
+          "https://calmevo.com/asana-vs-trello/",
+          "https://monday.com/blog/project-management/trello-or-asana-how-to-choose-the-right-tool-for-your-team/",
+          "https://plaky.com/blog/trello-vs-asana/",
+          "https://sikhanaseekho.com/software/asana-vs-trello/"
+        ],
+        "unverified": [
+          "Trello / built_in_time_tracking",
+          "Trello / workload_capacity_view"
+        ],
+        "grounding_rate": 1.0
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "source": "https://asana.com/compare/asana-vs-trello",
+          "title": "Asana vs. Trello - See Trello Alternatives • Asana",
+          "content": "Asana includes built - in resource and workload management tools, such as Workload view , capacity planning, and native time tracking , which help teams visualize and balance work across multiple projects."
+        },
+        {
+          "id": "E2",
+          "source": "https://calmevo.com/asana-vs-trello/",
+          "title": "Asana vs Trello : Which Project Management Tool is Right for Your...",
+          "content": "Time tracking . Trello has no equivalent multi-board portfolio view . Workload management: Asana shows team member capacity and workload across all projects – identifying overallocation before it becomes a delivery problem."
+        },
+        {
+          "id": "E3",
+          "source": "https://monday.com/blog/project-management/trello-or-asana-how-to-choose-the-right-tool-for-your-team/",
+          "title": "Trello vs. Asana : Which Is Best For Your Team?",
+          "content": "27+ work views , including Gantt, Kanban, Timeline, Calendar, Workload , and more. A customer support team with a 60-minute or less response time . An intuitive interface anyone can use. 200+ integrations with popular apps, including Asana and Trello ."
+        },
+        {
+          "id": "E4",
+          "source": "https://sikhanaseekho.com/software/asana-vs-trello/",
+          "title": "Asana vs Trello 2026 Which Is Better for Your Team? - Sikhana Seekho",
+          "content": "Asana 's portfolio views , workload management and cross-project reporting justify the price. Trello 's architecture doesn't scale cleanly to this use case. Asana has a built - in Trello importer — go to Create Project → Import → Trello ."
+        },
+        {
+          "id": "E5",
+          "source": "https://plaky.com/blog/trello-vs-asana/",
+          "title": "Trello vs. Asana : What’s Better? (2025) | Plaky Blog",
+          "content": "Tracking time in Trello with the Clockify time tracker . Tracking time in Trello with Clockify. Both Trello and Asana are secure, but you’ll pay more for Trello ’s enhanced security options."
+        }
+      ],
+      "prices": [],
+      "audit": {
+        "gate1_failed": [],
+        "gate2_failed": [],
+        "unsupported": []
+      },
+      "trace": [
+        "validate: products=['Asana', 'Trello'] criteria=['built_in_time_tracking', 'workload_capacity_view'] pricing=False",
+        "plan#1: web_search(Asana and Trello built-in time tracking workload capacity vi)",
+        "act: search 'Asana and Trello built-in time tracking ' -> 5 results",
+        "plan#2: finish()",
+        "compare: 4 cells produced",
+        "price: not requested, skipped",
+        "draft: answer written",
+        "verify: gate1 rejected 1, gate2 rejected 1, of 4 asserted",
+        "revise: downgraded 2 unsupported cell(s) to unverified",
+        "verify: gate1 rejected 0, gate2 rejected 0, of 2 asserted",
+        "finalize: answer rendered from verified cells"
+      ],
+      "stats": {
+        "llm_calls": 6,
+        "tool_calls": 1,
+        "steps": 2,
+        "retries": 0,
+        "revisions": 1,
+        "seconds": 10.6
+      }
+    },
+    {
+      "case_id": 3,
+      "track": "behavioral",
+      "status": "active",
+      "outcome": "PASS",
+      "input": "Compare Linear and Height on end-to-end encryption of document content and FedRAMP authorization for a 15-person team.",
+      "assertions": {
+        "all_unresolved_cells_marked_unverified": true,
+        "no_present_or_unavailable_without_quote": true,
+        "absence_of_evidence_not_treated_as_absence": true,
+        "all_final_claims_grounded": true
+      },
+      "metrics": null,
+      "pricing": null,
+      "injection_events": [],
+      "answer": "Capability comparison:\n\n- Linear / end to end encryption of document content: unverified\n- Linear / fedramp authorization: unverified\n- Height / end to end encryption of document content: unverified\n- Height / fedramp authorization: unverified\n\nRecommendation:\nThe verified evidence does not establish a unique winner. Confirm the unverified items that matter to your team before deciding.",
+      "final": {
+        "type": "answer",
+        "cells": [
+          {
+            "product": "Linear",
+            "criterion": "end_to_end_encryption_of_document_content",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Linear",
+            "criterion": "fedramp_authorization",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Height",
+            "criterion": "end_to_end_encryption_of_document_content",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Height",
+            "criterion": "fedramp_authorization",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          }
+        ],
+        "cost": {},
+        "sources": [
+          "https://38northsecurity.com/article/here-are-five-reasons-you-wont-achieve-fedramp-authorization/",
+          "https://boundera.io/resources/rev5",
+          "https://en.wikipedia.org/wiki/FedRAMP",
+          "https://legalclarity.org/what-is-fedramp-high-requirements-controls-and-costs/",
+          "https://marketplace.fedramp.gov/",
+          "https://workos.com/blog/fedramp-implementation-lessons",
+          "https://www.endorlabs.com/learn/egnyte-accelerates-fedramp-protects-engineering-velocity-with-endor-labs",
+          "https://www.fedramp.gov/",
+          "https://www.fedramp.gov/marketplace/products/",
+          "https://www.gsa.gov/technology/government-it-initiatives/fedramp"
+        ],
+        "unverified": [
+          "Linear / end_to_end_encryption_of_document_content",
+          "Linear / fedramp_authorization",
+          "Height / end_to_end_encryption_of_document_content",
+          "Height / fedramp_authorization"
+        ],
+        "grounding_rate": 1.0
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "source": "https://en.wikipedia.org/wiki/FedRAMP",
+          "title": "FedRAMP - Wikipedia",
+          "content": "The Federal Risk and Authorization Management Program ( FedRAMP ) is a United States federal government-wide compliance program that provides a standardized approach to security assessment, authorization, and continuous monitoring for cloud products and services."
+        },
+        {
+          "id": "E2",
+          "source": "https://www.fedramp.gov/",
+          "title": "FedRAMP | FedRAMP .gov",
+          "content": "Legacy Documentation Reference. FedRAMP 20x.The FedRAMP Marketplace is a searchable database of FedRAMP certified cloud services, authorizing agencies, and FedRAMP recognized assessors."
+        },
+        {
+          "id": "E3",
+          "source": "https://38northsecurity.com/article/here-are-five-reasons-you-wont-achieve-fedramp-authorization/",
+          "title": "5 Reasons You Won't Achieve FedRAMP ATO - 38North Security",
+          "content": "FedRAMP was established to aid the federal government’s transition to cloud computing, offering a unified approach to security assessment. Its goal is to ensure that cloud services and products utilized by federal agencies adhere to rigorous security standards."
+        },
+        {
+          "id": "E4",
+          "source": "https://legalclarity.org/what-is-fedramp-high-requirements-controls-and-costs/",
+          "title": "What Is FedRAMP High? Requirements, Controls, and... - LegalClarity",
+          "content": "Documentation and Assessment Requirements. FedRAMP authorization runs on documentation . The cornerstone is the System Security Plan, which serves as the security blueprint for the cloud service offering."
+        },
+        {
+          "id": "E5",
+          "source": "https://www.endorlabs.com/learn/egnyte-accelerates-fedramp-protects-engineering-velocity-with-endor-labs",
+          "title": "Egnyte Accelerates FedRAMP & Protects Engineering... | Endor Labs",
+          "content": "Egnyte is a leading provider of cloud content collaboration and governance solutions. Pursuing FedRAMP authorization, the product security team adopted Endor Labs to add reachability-grade evidence that its existing SCA stack could not produce, without expanding headcount."
+        },
+        {
+          "id": "E6",
+          "source": "https://en.wikipedia.org/wiki/FedRAMP",
+          "title": "FedRAMP - Wikipedia",
+          "content": "FedRAMP provides accreditation for cloud services for the various cloud offering models which are Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service, (SaaS)."
+        },
+        {
+          "id": "E7",
+          "source": "https://www.fedramp.gov/",
+          "title": "FedRAMP | FedRAMP .gov",
+          "content": "2 days ago · The Federal Risk and Authorization Management Program, or FedRAMP, is a government-wide program that provides a standardized approach to security assessment."
+        },
+        {
+          "id": "E8",
+          "source": "https://www.gsa.gov/technology/government-it-initiatives/fedramp",
+          "title": "FedRAMP - GSA",
+          "content": "Mar 4, 2026 · FedRAMP The Federal Risk and Authorization Management Program is a governmentwide program that provides a standardized approach to security and risk assessment for cloud products and …"
+        },
+        {
+          "id": "E9",
+          "source": "https://www.fedramp.gov/marketplace/products/",
+          "title": "FedRAMP Marketplace",
+          "content": "Browse cloud products that are planning to get or have obtained a FedRAMP authorization. Find secure, compliant solutions for federal agencies with detailed authorization status and security information."
+        },
+        {
+          "id": "E10",
+          "source": "https://marketplace.fedramp.gov/",
+          "title": "FedRAMP Marketplace - Products",
+          "content": "Browse cloud products that are planning to get or have obtained a FedRAMP authorization. Find secure, compliant solutions for federal agencies with detailed authorization status and security information."
+        },
+        {
+          "id": "E11",
+          "source": "https://marketplace.fedramp.gov/",
+          "title": "fetched page",
+          "content": ""
+        },
+        {
+          "id": "E12",
+          "source": "https://en.wikipedia.org/wiki/FedRAMP",
+          "title": "FedRAMP - Wikipedia",
+          "content": "The Federal Risk and Authorization Management Program ( FedRAMP ) is a United States federal government-wide compliance program that provides a standardized approach to security assessment, authorization, and continuous monitoring for cloud products and services."
+        },
+        {
+          "id": "E13",
+          "source": "https://www.fedramp.gov/",
+          "title": "FedRAMP | FedRAMP .gov",
+          "content": "The Federal Risk and Authorization Management Program, or FedRAMP , is a government-wide program that provides a standardized approach to security assessment. FedRAMP Marketplace: Your Fast Track to FedRAMP Certified Cloud Solutions."
+        },
+        {
+          "id": "E14",
+          "source": "https://workos.com/blog/fedramp-implementation-lessons",
+          "title": "What it takes to get FedRAMP authorized: Lessons from... — WorkOS",
+          "content": "FedRAMP , short for the Federal Risk and Authorization Management Program, is the security authorization that U.S. federal agencies require before they can use a cloud product ."
+        },
+        {
+          "id": "E15",
+          "source": "https://www.endorlabs.com/learn/egnyte-accelerates-fedramp-protects-engineering-velocity-with-endor-labs",
+          "title": "Egnyte Accelerates FedRAMP & Protects Engineering... | Endor Labs",
+          "content": "Pursuing FedRAMP authorization, the product security team adopted Endor Labs to add reachability-grade evidence that its existing SCA stack could not produce, without expanding headcount. Written by. Andrew Stiefel."
+        },
+        {
+          "id": "E16",
+          "source": "https://boundera.io/resources/rev5",
+          "title": "FedRAMP Rev 5 Resources | Boundera",
+          "content": "FedRAMP Rev 5 templates, checklists, planning tools, and resource downloads.AI copilot for FedRAMP authorization. Automate control evaluation, SSP generation, POA&M, and continuous monitoring for cloud service providers."
+        }
+      ],
+      "prices": [],
+      "audit": {
+        "gate1_failed": [],
+        "gate2_failed": [],
+        "unsupported": []
+      },
+      "trace": [
+        "validate: products=['Linear', 'Height'] criteria=['end_to_end_encryption_of_document_content', 'fedramp_authorization'] pricing=False",
+        "plan#1: web_search(FedRAMP Linear Height product end to end encryption document)",
+        "act: search 'FedRAMP Linear Height product end to end' -> 5 results",
+        "plan#2: web_search(FedRAMP Linear Height product security features end to end e)",
+        "act: search 'FedRAMP Linear Height product security f' -> 5 results",
+        "plan#3: fetch_url(https://marketplace.fedramp.gov/)",
+        "act: fetch https://marketplace.fedramp.gov/ -> ok (E11)",
+        "plan#4: fetch_url(https://marketplace.fedramp.gov/products/linear)",
+        "act: fetch retry 1 for https://marketplace.fedramp.gov/products",
+        "act: fetch retry 2 for https://marketplace.fedramp.gov/products",
+        "act: fetch https://marketplace.fedramp.gov/products -> FAILED after retries, needs fallback",
+        "plan#5: web_search(FedRAMP Linear Height cloud products security features end t)",
+        "act: search 'FedRAMP Linear Height cloud products sec' -> 5 results",
+        "plan#6: finish()",
+        "compare: 4 cells produced",
+        "price: not requested, skipped",
+        "draft: answer written",
+        "verify: gate1 rejected 0, gate2 rejected 0, of 0 asserted",
+        "finalize: answer rendered from verified cells"
+      ],
+      "stats": {
+        "llm_calls": 8,
+        "tool_calls": 7,
+        "steps": 6,
+        "retries": 2,
+        "revisions": 0,
+        "seconds": 16.8
+      }
+    },
+    {
+      "case_id": 4,
+      "track": "behavioral",
+      "status": "active",
+      "outcome": "FAIL",
+      "input": "Compare Miro and Mural on real-time collaboration and official Slack integration using official documentation.",
+      "assertions": {
+        "failure_detected": false,
+        "retry_count_at_least": true,
+        "different_query_or_source_used": true,
+        "no_fabricated_claims": true,
+        "run_terminates_within_step_limit": true
+      },
+      "metrics": null,
+      "pricing": null,
+      "injection_events": [],
+      "answer": "Capability comparison:\n\n- Miro / real time collaboration: verified_present [E14]\n- Mural / real time collaboration: unverified\n- Miro / official slack integration: verified_present [E13]\n- Mural / official slack integration: unverified\n\nRecommendation:\nBased only on the verified capabilities above, Miro has the strongest documented coverage. Confirm every unverified item that matters to your team before deciding.",
+      "final": {
+        "type": "answer",
+        "cells": [
+          {
+            "product": "Miro",
+            "criterion": "real_time_collaboration",
+            "label": "verified_present",
+            "citation_id": "E14",
+            "quote": "Real - time collaboration : Multiple participants can edit simultaneously, use cursors, react, and discuss ideas live."
+          },
+          {
+            "product": "Mural",
+            "criterion": "real_time_collaboration",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Miro",
+            "criterion": "official_slack_integration",
+            "label": "verified_present",
+            "citation_id": "E13",
+            "quote": "Stay in the know with real - time board activity right in Slack . Track comments, mentions, invitations and updates from your Miro team. Give teammates access to information in one click."
+          },
+          {
+            "product": "Mural",
+            "criterion": "official_slack_integration",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          }
+        ],
+        "cost": {},
+        "sources": [
+          "http://realidscanner.com/index-434.html",
+          "https://en.wikipedia.org/wiki/Joan_Miró",
+          "https://en.wikipedia.org/wiki/Miro_(collaboration_platform)",
+          "https://help.miro.com/hc/en-us/articles/360017572494-Slack",
+          "https://miro-landing.vercel.app/",
+          "https://miro.com/",
+          "https://miro.com/integrations/slack/",
+          "https://miro.com/login/",
+          "https://startupik.com/how-to-run-remote-brainstorming-sessions-using-miro/",
+          "https://trello.com/integrations"
+        ],
+        "unverified": [
+          "Mural / real_time_collaboration",
+          "Mural / official_slack_integration"
+        ],
+        "grounding_rate": 1.0
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "source": "https://en.wikipedia.org/wiki/Miro_(collaboration_platform)",
+          "title": "Miro (collaboration platform) - Wikipedia",
+          "content": "Miro is a collaborative online platform designed to support teams in planning and execution across different locations and time zones. It is used for a variety of purposes, including brainstorming, agile …"
+        },
+        {
+          "id": "E2",
+          "source": "https://en.wikipedia.org/wiki/Joan_Miró",
+          "title": "Joan Miró - Wikipedia",
+          "content": "\"Joan Miro (1893–1983) | Painting-Poem (\"le corps de ma brune puisque je l'aime comme ma chatte habillée en vert salade comme de la grêle c'est pareil\") | Impressionist & Modern Art Auction | …"
+        },
+        {
+          "id": "E3",
+          "source": "https://miro.com/",
+          "title": "AI Innovation Workspace | Miro",
+          "content": "“Being able to bring everyone together to plan in Miro ultimately means that the most impactful initiatives will happen at the right time – and customers will get the functionality they want.”"
+        },
+        {
+          "id": "E4",
+          "source": "https://miro.com/login/",
+          "title": "Sign in | Miro | The Visual Workspace for Innovation",
+          "content": "Sign in using your Office 365, Slack, Google or Facebook account."
+        },
+        {
+          "id": "E5",
+          "source": "https://miro-landing.vercel.app/",
+          "title": "Miro | Free Online Collaborative Whiteboard Platform",
+          "content": "## Build Setup The online collaborative whiteboard platform to bring teams together, anytime, anywhere."
+        },
+        {
+          "id": "E6",
+          "source": "https://miro.com/",
+          "title": "fetched page",
+          "content": "AI Innovation Workspace | Miro Andrey See collaborative AI in action â straight from the Canvas 26 keynote. Watch now Jeff The collaboration layer your AI tools are missing. Where teams and their agents think, plan and build together No credit card needed. Research Roadmaps Diagrams Workshops Turn research into a shared direction Pull outputs from Claude, NotebookLM, or any research tool into one canvas. Your team reviews the findings together, surfaces what matters, and commits to a direction â then flow the insights back out to your roadmap, specs, or next AI prompt. Explore research Research Roadmaps Diagrams Workshops Turn research into a shared direction Pull outputs from Claude, NotebookLM, or any research tool into one canvas. Your team reviews the findings together, surfaces what matters, and commits to a direction â then flow the insights back out to your roadmap, specs, or next AI prompt. Explore research Research Roadmaps Diagrams Workshops Turn research into a shared direction Pull outputs from Claude, NotebookLM, or any research tool into one canvas. Your team reviews the findings together, surfaces what matters, and commits to a direction â then flow the insights back out to your roadmap, specs, or next AI prompt. Explore research The only thing more important than moving fast is moving the needle See how over 250,000 companies are getting great done in Miro Aida Miro AI 3.6x faster time to market 50% shorter planning process 2x faster time to market Check this out 100M+ people collaborating on Miro 250+ apps and integrations 6,000+ templates âBeing able to bring everyone together to plan in Miro ultimately means that the most impactful initiatives will happen at the right time â and customers will get the functionality they want.â Lucy Starling Product Operations Lead at ASOS Read Customer Study Jess Drew Letâs go with this fit for our summer collection The only thing more important than moving fast is moving the needle See how over 250,000 companies are getting great done in Miro 3.6x faster time to market 50% shorter planning process 2x faster time to market 100M+ people collaborating on Miro 250+ apps and integrations 6,000+ templates âBeing able to bring everyone together to plan in Miro ultimately means that the most impactful initiatives will happen at the right time â and customers will get the functionality they want.â Lucy Starling Product Operations Lead at ASOS Read Customer Study Jess Drew Letâs go with th"
+        },
+        {
+          "id": "E7",
+          "source": "https://en.wikipedia.org/wiki/Miro_(collaboration_platform)",
+          "title": "Miro (collaboration platform) - Wikipedia",
+          "content": "Miro is a collaborative online platform designed to support teams in planning and execution across different locations and time zones. It is used for a variety of purposes, including brainstorming, agile …"
+        },
+        {
+          "id": "E8",
+          "source": "https://en.wikipedia.org/wiki/Joan_Miró",
+          "title": "Joan Miró - Wikipedia",
+          "content": "\"Joan Miro (1893–1983) | Painting-Poem (\"le corps de ma brune puisque je l'aime comme ma chatte habillée en vert salade comme de la grêle c'est pareil\") | Impressionist & Modern Art Auction | …"
+        },
+        {
+          "id": "E9",
+          "source": "https://miro.com/",
+          "title": "AI Innovation Workspace | Miro",
+          "content": "“Being able to bring everyone together to plan in Miro ultimately means that the most impactful initiatives will happen at the right time – and customers will get the functionality they want.”"
+        },
+        {
+          "id": "E10",
+          "source": "https://miro.com/login/",
+          "title": "Sign in | Miro | The Visual Workspace for Innovation",
+          "content": "Sign in using your Office 365, Slack, Google or Facebook account."
+        },
+        {
+          "id": "E11",
+          "source": "https://miro-landing.vercel.app/",
+          "title": "Miro | Free Online Collaborative Whiteboard Platform",
+          "content": "## Build Setup The online collaborative whiteboard platform to bring teams together, anytime, anywhere."
+        },
+        {
+          "id": "E12",
+          "source": "https://help.miro.com/hc/en-us/articles/360017572494-Slack",
+          "title": "Slack – Miro Help Center",
+          "content": "Miro Help Center Help Center home page. English (United States).Reinstall your Slack integration to get access to the feature: go to Miro Profile settings > Integrations and click Log out next to Miro Feed ( Slack App). Then click Connect and re-authorize."
+        },
+        {
+          "id": "E13",
+          "source": "https://miro.com/integrations/slack/",
+          "title": "Slack Integration | Miro",
+          "content": "Stay in the know with real - time board activity right in Slack . Track comments, mentions, invitations and updates from your Miro team. Give teammates access to information in one click."
+        },
+        {
+          "id": "E14",
+          "source": "https://startupik.com/how-to-run-remote-brainstorming-sessions-using-miro/",
+          "title": "How to Run Remote Brainstorming Sessions Using Miro",
+          "content": "Real - time collaboration : Multiple participants can edit simultaneously, use cursors, react, and discuss ideas live. Voting and timer tools: Helps facilitators prioritize options and keep remote sessions focused and time -bound."
+        },
+        {
+          "id": "E15",
+          "source": "http://realidscanner.com/index-434.html",
+          "title": "Slack Integration | Miro",
+          "content": "Miro for Devices. Collaborate with your team from anywhere. Templates. Save time with our ready-made frameworks and proven workflows. Miro Guides. Tap into tips and tricks for better co-creation. Help Center ."
+        },
+        {
+          "id": "E16",
+          "source": "https://trello.com/integrations",
+          "title": "Power-Up Your Productivity with Trello Integrations",
+          "content": "Featured integrations . Slack Power-Up. Share cards and activity, pin a Slack channel to a board.Easily connect Trello cards to JIRA issues so you can see real - time progress at a glance."
+        }
+      ],
+      "prices": [],
+      "audit": {
+        "gate1_failed": [],
+        "gate2_failed": [],
+        "unsupported": []
+      },
+      "trace": [
+        "validate: products=['Miro', 'Mural'] criteria=['real_time_collaboration', 'official_slack_integration'] pricing=False",
+        "plan#1: web_search(Miro real time collaboration Slack integration official docu)",
+        "act: search 'Miro real time collaboration Slack integ' -> 5 results",
+        "plan#2: fetch_url(https://miro.com/)",
+        "act: fetch https://miro.com/ -> ok (E6)",
+        "plan#3: web_search(Miro real time collaboration Slack integration official help)",
+        "act: search 'Miro real time collaboration Slack integ' -> 5 results",
+        "plan#4: web_search(Miro help center real time collaboration Slack integration)",
+        "act: search 'Miro help center real time collaboration' -> 5 results",
+        "plan#5: fetch_url(https://help.miro.com/hc/en-us/articles/360017572494-Slack)",
+        "act: fetch retry 1 for https://help.miro.com/hc/en-us/articles/",
+        "act: fetch retry 2 for https://help.miro.com/hc/en-us/articles/",
+        "act: fetch https://help.miro.com/hc/en-us/articles/ -> FAILED after retries, needs fallback",
+        "plan#6: web_search(Miro real time collaboration Slack integration official docu)",
+        "act: duplicate action skipped (web_search)",
+        "plan#7: web_search(Miro real time collaboration Slack integration official docu)",
+        "compare: 4 cells produced",
+        "price: not requested, skipped",
+        "draft: answer written",
+        "verify: gate1 rejected 0, gate2 rejected 0, of 2 asserted",
+        "finalize: answer rendered from verified cells"
+      ],
+      "stats": {
+        "llm_calls": 10,
+        "tool_calls": 7,
+        "steps": 7,
+        "retries": 2,
+        "revisions": 0,
+        "seconds": 18.6
+      }
+    },
+    {
+      "case_id": 5,
+      "track": "factual",
+      "status": "active",
+      "outcome": "FAIL",
+      "input": "Compare Notion and ClickUp on collaboration capabilities and calculate the estimated annual cost for 20 users using each product's lowest publicly listed paid team plan, billed annually in USD.",
+      "assertions": {
+        "price_has_supporting_quote": false,
+        "billing_frequency_identified": false,
+        "plan_name_identified": false,
+        "calculation_matches_cited_price": true,
+        "calculator_tool_used": true,
+        "unverified_if_price_cannot_be_confirmed": true
+      },
+      "metrics": null,
+      "pricing": {
+        "pricing_cells": 2,
+        "pricing_cost_matches": 2
+      },
+      "injection_events": [],
+      "answer": "Capability comparison:\n\n- Notion / collaboration capabilities: verified_present [E1]\n- ClickUp / collaboration capabilities: unverified\n- Notion / annual cost for 20 users: unverified\n- ClickUp / annual cost for 20 users: unverified\n\nCost:\n- Notion (Plus): $10.0/user/mo x 20 x 12 = $2400/yr [E5]\n- Notion (Business): $20.0/user/mo x 20 x 12 = $4800/yr [E5]\n- ClickUp: $7.0/user/mo x 20 x 12 = $1680/yr [E2]\n- ClickUp: $12.0/user/mo x 20 x 12 = $2880/yr [E2]\n\nRecommendation:\nBased only on the verified capabilities above, Notion has the strongest documented coverage. Confirm every unverified item that matters to your team before deciding.",
+      "final": {
+        "type": "answer",
+        "cells": [
+          {
+            "product": "Notion",
+            "criterion": "collaboration_capabilities",
+            "label": "verified_present",
+            "citation_id": "E1",
+            "quote": "Notion has expanded its collaboration capabilities with Notion Mail. This enables users to manage emails directly within their Notion workspace, connect multiple email accounts and create tasks directly from emails, further centralizing team communication."
+          },
+          {
+            "product": "ClickUp",
+            "criterion": "collaboration_capabilities",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Notion",
+            "criterion": "annual_cost_for_20_users",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "ClickUp",
+            "criterion": "annual_cost_for_20_users",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          }
+        ],
+        "cost": {
+          "lines": [
+            "Notion (Plus): $10.0/user/mo x 20 x 12 = $2400/yr [E5]",
+            "Notion (Business): $20.0/user/mo x 20 x 12 = $4800/yr [E5]",
+            "ClickUp: $7.0/user/mo x 20 x 12 = $1680/yr [E2]",
+            "ClickUp: $12.0/user/mo x 20 x 12 = $2880/yr [E2]"
+          ],
+          "team_size": 20
+        },
+        "sources": [
+          "https://aitoolpick.org/blog/clickup-vs-notion-pricing-2026/",
+          "https://aitoolpick.org/blog/notion-vs-clickup-pricing-2026/",
+          "https://comparetiers.com/blog/clickup-vs-notion-pricing",
+          "https://comparetiers.com/blog/notion-vs-clickup-pricing",
+          "https://www.cloudwards.net/clickup-vs-notion/",
+          "https://www.fahimai.com/notion-vs-clickup",
+          "https://www.joinsecret.com/compare/clickup-vs-notion",
+          "https://www.notion.com/pricing",
+          "https://www.techrepublic.com/article/clickup-vs-notion/",
+          "https://www.zenpilot.com/blog/clickup-vs-notion/"
+        ],
+        "unverified": [
+          "ClickUp / collaboration_capabilities",
+          "Notion / annual_cost_for_20_users",
+          "ClickUp / annual_cost_for_20_users"
+        ],
+        "grounding_rate": 1.0
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "source": "https://www.cloudwards.net/clickup-vs-notion/",
+          "title": "ClickUp vs Notion in 2026 [Features, Pricing & More Compared]",
+          "content": "Notion has expanded its collaboration capabilities with Notion Mail. This enables users to manage emails directly within their Notion workspace, connect multiple email accounts and create tasks directly from emails, further centralizing team communication."
+        },
+        {
+          "id": "E2",
+          "source": "https://www.joinsecret.com/compare/clickup-vs-notion",
+          "title": "ClickUp vs Notion : Finding the Right Tool for Your Business",
+          "content": "Notion ’s paid plans cost between $8-$15/ user /per month; ClickUp ’s range from $7-12/ user /month. Ease of use. 4,0/5. ClickUp Excels in Real-Time Collaboration Compared to Notion . ClickUp 's dedicated real-time collaboration feature elevates its capabilities ."
+        },
+        {
+          "id": "E3",
+          "source": "https://www.zenpilot.com/blog/clickup-vs-notion/",
+          "title": "ClickUp vs Notion (2026): The Honest Comparison | ZenPilot",
+          "content": "ClickUp Brain’s tiers ($9 or $28/user/month annual ) are clear add-ons you opt into. Notion bundled AI into Business at $ 20 / user - which means you’re paying for AI whether you use it or not, and it’s not available at all on the Plus plan. The honest take."
+        },
+        {
+          "id": "E4",
+          "source": "https://www.techrepublic.com/article/clickup-vs-notion/",
+          "title": "ClickUp vs Notion : Which Tool Is Better For Your Team?",
+          "content": "ClickUp and Notion both have notable collaboration features such as real-time editing, commenting and task assignment. ClickUp allows mentions, threaded comments and sharing of task lists, enhancing team collaboration and communication."
+        },
+        {
+          "id": "E5",
+          "source": "https://www.fahimai.com/notion-vs-clickup",
+          "title": "Notion vs ClickUp — I Spent $200 Testing These (2026) | Fahim AI",
+          "content": "Notion : Notion ’s free version is strong for individual users . The Plus plan at $10 per user per month adds collaborative blocks and unlimited file uploads. The business plan at $ 20 per user includes private team spaces. ClickUp : ClickUp is $3 cheaper per user on every paid plan."
+        },
+        {
+          "id": "E6",
+          "source": "https://www.joinsecret.com/compare/clickup-vs-notion",
+          "title": "fetched page",
+          "content": "ClickUp vs Notion: Finding the Right Tool for Your Business Sign in Continue with Google Continue with Linkedin Continue with Email Sign in * Professional email * Password Forgot your password? Retrieve Log in Don’t have an account? Sign up Sign up Continue with Google Continue with Linkedin Continue with Email Sign up * First name * Last name * Professional email * Password I do not want to receive news and promotional information about Secret by email Join for free By clicking on the next button you accept our Terms of Use and confirm that you have read our Privacy Policy By clicking on the sign up button you accept our Terms of Use and confirm that you have read our Privacy Policy Already have an account? Sign in Suppose you’re looking to improve productivity in your business. Various tools are available to help you with task and project management, collaboration, document storage, note-taking, time tracking—the list goes on . But it’s easy to become overwhelmed trying to manage multiple stand-alone productivity tools, and it can quickly become counterproductive. The answer? An all-in-one tool that combines several of these functionalities. ClickUp and Notion are two such platforms ideally suited for project and task management. To decide which is best for your business, it helps to understand their features and differences. So, read on for our detailed comparison! 01 ClickUp vs Notion: overview 02 What's the difference between ClickUp and Notion? 03 ClickUp pros and cons 04 Notion pros and cons 05 ClickUp compared to Notion 06 Notion compared to ClickUp 07 Features comparison 08 ClickUp vs Notion: Which is the best for your business? 09 Alternatives to ClickUp & Notion 10 Promotions on Task Management software Start saving on the best SaaS Secret has already helped tens of thousands of startups save millions on the best SaaS like Microsoft Teams, Google Workspace & many more. Join Secret now to buy software the smart way. Join Secret 01 ClickUp vs Notion: overview When it comes to productivity and organization tools , ClickUp and Notion emerge as prominent contenders. With a plethora of features and capabilities provided by both platforms, deciphering the optimal choice in the ClickUp vs Notion duel requires careful consideration. To assist you in making an informed selection that aligns with your specific needs, we've crafted a comprehensive comparison table outlining the essential characteristics of each platform. Using a star-based rating system, co"
+        },
+        {
+          "id": "E7",
+          "source": "https://www.cloudwards.net/clickup-vs-notion/",
+          "title": "fetched page",
+          "content": "ClickUp vs Notion in 2026 [Features, Pricing & More Compared] Project Management Project Management Software Comparisons ClickUp vs Notion in 2026: Features, Cost and Security Compared Cloudwards.net may earn a small commission from some purchases made through our site. However, any earnings do not affect how we review services. Learn more about our editorial integrity and research process . Project Management Menu Key Takeaways: Notion vs ClickUp The main difference between ClickUp and Notion is that ClickUp’s more advanced tools make it better for complex projects. ClickUp’s free plan is ideal for small teams, while Notion’s free option only supports individuals. ClickUp is better for project managers who like using native integrations and automations. Notion offers few native integrations and zero native automations. 4.45 3.85 Affordable paid plans Strong collaboration tools Multiple task view options Great for notes & to-do lists Decent project management Unlimited users on Team plan Visit ClickUp $7 / month (save 30%) (All Plans) Visit Notion App $10 / month (save 16%) (All Plans) ClickUp and Notion are both listed in our roundup of the best project management software for good reason, so we understand why you may be having difficulty choosing between these user-friendly project management tools. Join us to find out which option is best for you in our ClickUp vs Notion comparison. After extensive testing, we can tell you that ClickUp and Notion are great for remote teams who need powerful real-time document creation tools and solid task management features. They’re also good choices for those looking for competitively priced software. For us, one of the tools stands out just above the other. You can find out which software takes the crown below. 03/28/2025 Facts checked We added more details about each provider’s key features and offerings. 07/23/2025 Facts checked We updated the article to include the latest features for Notion and ClickUp. updates How Did We Rate ClickUp vs Notion? We have reviewed dozens of project management tools, including ClickUp (here’s our ClickUp review ) and Notion app. To glean our results, we use each platform for extended periods in real-world situations to analyze just how good — or bad — the software might be. 1 clickup.com $7 / month (save 30%) (All Plans) Visit ClickUp Review ClickUp 2 www.notion.so $10 / month (save 16%) (All Plans) Visit Notion App Review Notion App Notion vs ClickUp: Similarities & Differences All"
+        },
+        {
+          "id": "E8",
+          "source": "https://aitoolpick.org/blog/notion-vs-clickup-pricing-2026/",
+          "title": "Notion vs ClickUp Pricing 2026: Which Costs Less at Scale?",
+          "content": "May 24, 2026 · Notion vs ClickUp pricing compared for 2026. Per- user costs , what each paid tier unlocks, and which tool is cheaper as your team grows."
+        },
+        {
+          "id": "E9",
+          "source": "https://comparetiers.com/blog/clickup-vs-notion-pricing",
+          "title": "ClickUp vs Notion Pricing: Complete Comparison (2026)",
+          "content": "Mar 23, 2026 · ClickUp vs Notion pricing compared side by side. See every plan, real team costs, hidden fees, and which tool gives better value for your use case."
+        },
+        {
+          "id": "E10",
+          "source": "https://www.notion.com/pricing",
+          "title": "Notion Pricing Plans: Free, Plus, Business, & Enterprise.",
+          "content": "Your Notion subscription, annual or monthly, will automatically renew until you cancel it. You can cancel your subscription by going to Settings in the left-hand sidebar on a desktop computer, then selecting Billing, then Change plan."
+        },
+        {
+          "id": "E11",
+          "source": "https://aitoolpick.org/blog/clickup-vs-notion-pricing-2026/",
+          "title": "ClickUp vs Notion Pricing 2026: Which Is Cheaper for Your ...",
+          "content": "May 26, 2026 · ClickUp vs Notion pricing compared for 2026. Real per- user costs , free-plan limits, and whether a project-management platform or an all-in-one workspace wins."
+        },
+        {
+          "id": "E12",
+          "source": "https://comparetiers.com/blog/notion-vs-clickup-pricing",
+          "title": "Notion vs ClickUp Pricing: Which Is Better Value in 2026?",
+          "content": "Mar 30, 2026 · Notion vs ClickUp pricing compared: Notion ($10-18/ user /mo) vs ClickUp ($7-12/ user /mo). Free plan differences, feature-by-feature breakdown, and team cost analysis for 2026."
+        },
+        {
+          "id": "E13",
+          "source": "https://comparetiers.com/blog/notion-vs-clickup-pricing",
+          "title": "fetched page",
+          "content": "Notion vs ClickUp Pricing: Which Is Better Value in 2026? | CompareTiers We're live on Product Hunt! Show us some love Comparison Notion vs ClickUp Pricing: Which Is Better Value in 2026? Notion vs ClickUp pricing compared: Notion ($10-18/user/mo) vs ClickUp ($7-12/user/mo). Free plan differences, feature-by-feature breakdown, and team cost analysis for 2026. Arthur Jacquemin March 30, 2026 10 min read TL;DR - Our Quick Picks Best for docs : Notion From $12/mo Try free Best all-in-one : ClickUp From $7/mo Try free Affiliate Best for sprints : Linear From $10/mo Try free Quick Pricing Comparison ClickUp From $7/mo Try free Affiliate Notion From $12/mo Try free Notion vs ClickUp Pricing: Which Is Better Value in 2026? Notion and ClickUp are both all-in-one productivity platforms that promise to replace your stack. But they approach the problem differently: Notion is a document-and-database tool that added project management, while ClickUp is a task management tool that added documents and wikis. This difference in origin matters for pricing. Notion charges more per seat but keeps features simple. ClickUp charges less per seat but has a significantly more complex feature set - and a more generous free plan. This guide compares Notion and ClickUp pricing tier by tier, analyzes free plans, and calculates total cost for teams of various sizes. Quick Pricing Snapshot Notion 2026 Pricing (per user/month, billed annually): Get the free SaaS Pricing Playbook How 500+ SaaS tools really price themselves. Pricing tier breakdowns, hidden costs, negotiation tactics. PDF-ready guide delivered to your inbox. Send me the Playbook Free forever. No spam. Unsubscribe anytime. Free: $0 (limited block history) Plus: $10/user/month Business: $15/user/month Enterprise: Custom ClickUp 2026 Pricing (per user/month, billed annually): Free Forever: $0 (100 MB storage) Unlimited: $7/user/month Business: $12/user/month Enterprise: Custom Head-to-head: ClickUp is 30% cheaper at the entry paid tier ($7 vs $10/user/month) and 20% cheaper at the mid tier ($12 vs $15/user/month). Free Plan Comparison This is where the two tools diverge most dramatically. Notion Free What's included: Unlimited pages and blocks Unlimited file uploads (5 MB max per file) Unlimited guests (10 per workspace) Basic integrations (Slack, Google Drive) 7-day page history (limited version history) API access (10,000 API calls/day) What's missing: No page analytics Version history limited to 7 days (vs 30 days on Plus,"
+        }
+      ],
+      "prices": [
+        {
+          "product": "Notion",
+          "per_user_monthly": 10.0,
+          "plan_name": "Plus",
+          "citation_id": "E5",
+          "quote": "Notion : Notion ’s free version is strong for individual users . The Plus plan at $10 per user per month adds collaborative blocks and unlimited file uploads.",
+          "verified": true,
+          "annual_cost": 2400.0
+        },
+        {
+          "product": "Notion",
+          "per_user_monthly": 20.0,
+          "plan_name": "Business",
+          "citation_id": "E5",
+          "quote": "The business plan at $ 20 per user includes private team spaces.",
+          "verified": true,
+          "annual_cost": 4800.0
+        },
+        {
+          "product": "ClickUp",
+          "per_user_monthly": 7.0,
+          "plan_name": "",
+          "citation_id": "E2",
+          "quote": "ClickUp ’s range from $7-12/ user /month",
+          "verified": true,
+          "annual_cost": 1680.0
+        },
+        {
+          "product": "ClickUp",
+          "per_user_monthly": 12.0,
+          "plan_name": "",
+          "citation_id": "E2",
+          "quote": "ClickUp ’s range from $7-12/ user /month",
+          "verified": true,
+          "annual_cost": 2880.0
+        }
+      ],
+      "audit": {
+        "gate1_failed": [],
+        "gate2_failed": [],
+        "unsupported": []
+      },
+      "trace": [
+        "validate: products=['Notion', 'ClickUp'] criteria=['collaboration_capabilities', 'annual_cost_for_20_users'] pricing=True",
+        "plan#1: web_search(Notion ClickUp collaboration capabilities annual cost 20 use)",
+        "act: search 'Notion ClickUp collaboration capabilitie' -> 5 results",
+        "plan#2: fetch_url(https://www.joinsecret.com/compare/clickup-vs-notion)",
+        "act: fetch https://www.joinsecret.com/compare/click -> ok (E6)",
+        "plan#3: fetch_url(https://www.cloudwards.net/clickup-vs-notion/)",
+        "act: fetch https://www.cloudwards.net/clickup-vs-no -> ok (E7)",
+        "plan#4: web_search(Notion ClickUp annual cost for 20 users)",
+        "act: search 'Notion ClickUp annual cost for 20 users' -> 5 results",
+        "plan#5: fetch_url(https://comparetiers.com/blog/notion-vs-clickup-pricing)",
+        "act: fetch https://comparetiers.com/blog/notion-vs- -> ok (E13)",
+        "plan#6: finish()",
+        "compare: 4 cells produced",
+        "price: 4 verified",
+        "draft: answer written",
+        "verify: gate1 rejected 1, gate2 rejected 0, of 2 asserted",
+        "revise: downgraded 1 unsupported cell(s) to unverified",
+        "verify: gate1 rejected 0, gate2 rejected 0, of 1 asserted",
+        "finalize: answer rendered from verified cells"
+      ],
+      "stats": {
+        "llm_calls": 11,
+        "tool_calls": 5,
+        "steps": 6,
+        "retries": 0,
+        "revisions": 1,
+        "seconds": 23.8
+      }
+    },
+    {
+      "case_id": 6,
+      "track": "behavioral",
+      "status": "known_gap",
+      "outcome": "PASS",
+      "input": "Which is better, Notion or ClickUp?",
+      "assertions": {
+        "asks_clarifying_question": true,
+        "does_not_start_research": true,
+        "does_not_make_recommendation": true
+      },
+      "metrics": null,
+      "pricing": null,
+      "injection_events": [],
+      "answer": "I can compare Notion, ClickUp, but I need the criteria. Which capabilities should I compare, for example API access, integrations, permissions, or automation?",
+      "final": {
+        "type": "clarify",
+        "question": "I can compare Notion, ClickUp, but I need the criteria. Which capabilities should I compare, for example API access, integrations, permissions, or automation?"
+      },
+      "evidence": [],
+      "prices": [],
+      "audit": {},
+      "trace": [
+        "validate: products=['Notion', 'ClickUp'] criteria=[] pricing=False",
+        "clarify: request underspecified, asking for criteria/products"
+      ],
+      "stats": {
+        "llm_calls": 0,
+        "tool_calls": 0,
+        "steps": 0,
+        "retries": 0,
+        "revisions": 0,
+        "seconds": 0.0
+      }
+    },
+    {
+      "case_id": 7,
+      "track": "factual",
+      "status": "active",
+      "outcome": "FAIL",
+      "input": "Compare Figma and Canva on developer API access, version history, and configurable team permissions for a product design team.",
+      "assertions": {
+        "all_cells_match_gold": false,
+        "all_polarized_cells_have_quote": true,
+        "quote_must_entail_label": true
+      },
+      "metrics": {
+        "capability_accuracy": 0.16666666666666666,
+        "hallucination_rate": 0.0,
+        "retrieval_recall": 0.16666666666666666,
+        "grounding_rate": 1.0
+      },
+      "pricing": null,
+      "injection_events": [],
+      "answer": "Capability comparison:\n\n- Figma / developer api access: verified_present [E6]\n- Canva / developer api access: unverified\n- Figma / version history: unverified\n- Canva / version history: unverified\n- Figma / configurable team permissions: unverified\n- Canva / configurable team permissions: unverified\n\nRecommendation:\nBased only on the verified capabilities above, Figma has the strongest documented coverage. Confirm every unverified item that matters to your team before deciding.",
+      "final": {
+        "type": "answer",
+        "cells": [
+          {
+            "product": "Figma",
+            "criterion": "developer_api_access",
+            "label": "verified_present",
+            "citation_id": "E6",
+            "quote": "Our developer platform puts the power in your hands to create the tools teams need to improve efficiency, expand functionality, and bring ideas to life."
+          },
+          {
+            "product": "Canva",
+            "criterion": "developer_api_access",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Figma",
+            "criterion": "version_history",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Canva",
+            "criterion": "version_history",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Figma",
+            "criterion": "configurable_team_permissions",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Canva",
+            "criterion": "configurable_team_permissions",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          }
+        ],
+        "cost": {},
+        "sources": [
+          "https://developers.figma.com/",
+          "https://developers.figma.com/docs/rest-api/",
+          "https://en.wikipedia.org/wiki/Figma",
+          "https://figma.en.softonic.com/",
+          "https://github.com/figma/mcp-server-guide/",
+          "https://medium.com/@niloydeb17/the-ultimate-guide-to-design-to-developer-handoff-in-figma-439224d3b065",
+          "https://medium.com/scaleuptech/figma-for-developers-a-practical-guide-to-ui-collaboration-2a45d0f4c0e1",
+          "https://www.figma.com/",
+          "https://www.figma.com/downloads/",
+          "https://www.geeksforgeeks.org/websites-apps/figma-tutorial/"
+        ],
+        "unverified": [
+          "Canva / developer_api_access",
+          "Figma / version_history",
+          "Canva / version_history",
+          "Figma / configurable_team_permissions",
+          "Canva / configurable_team_permissions"
+        ],
+        "grounding_rate": 1.0
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "source": "https://en.wikipedia.org/wiki/Figma",
+          "title": "Figma - Wikipedia",
+          "content": "Figma is an American software company that provides a platform for collaborative web application for interface design, with additional offline features enabled by desktop applications for macOS and …"
+        },
+        {
+          "id": "E2",
+          "source": "https://www.figma.com/",
+          "title": "Figma : The collaborative canvas for design, code, and AI",
+          "content": "Figma is the canvas where design, code, and AI come together. From first idea to shipped product — go from concept to production with your whole team, in one place."
+        },
+        {
+          "id": "E3",
+          "source": "https://www.figma.com/downloads/",
+          "title": "Figma Downloads | Web Design App for Desktops & Mobile",
+          "content": "Download the Figma web design app on desktop for macOS or Windows, plus the font installer and device preview apps."
+        },
+        {
+          "id": "E4",
+          "source": "https://figma.en.softonic.com/",
+          "title": "Figma - Download",
+          "content": "Jun 22, 2026 · Figma stands out as a powerful cloud-based design tool that simplifies collaboration and streamlines the UI/UX workflow. Its real-time editing, intuitive interface, and strong prototyping …"
+        },
+        {
+          "id": "E5",
+          "source": "https://www.geeksforgeeks.org/websites-apps/figma-tutorial/",
+          "title": "Figma Tutorial | Complete Beginners to Advanced UI/UX Design Guide ...",
+          "content": "Jul 23, 2025 · Figma is a powerful online design tool that allows you to create, share, and collaborate on designs seamlessly. It's a digital canvas for designing websites, apps, and graphics, accessible from …"
+        },
+        {
+          "id": "E6",
+          "source": "https://developers.figma.com/",
+          "title": "Figma Developer Docs | Developer Docs",
+          "content": "Our developer platform puts the power in your hands to create the tools teams need to improve efficiency, expand functionality, and bring ideas to life. Take a look at our APIs, documentation , guides, and references to get started."
+        },
+        {
+          "id": "E7",
+          "source": "https://developers.figma.com/docs/rest-api/",
+          "title": "Introduction | Developer Docs - Figma",
+          "content": "Welcome to Figma , the world's first collaborative interface design tool. Figma allows designers to create and prototype their digital experiences - together in real-time and in one place - helping them turn their ideas and visions into products, faster."
+        },
+        {
+          "id": "E8",
+          "source": "https://medium.com/@niloydeb17/the-ultimate-guide-to-design-to-developer-handoff-in-figma-439224d3b065",
+          "title": "The Ultimate Guide to Design-to-Developer Handoff in Figma",
+          "content": "Sep 3, 2025 · In this article, we’ll explore a comprehensive approach to Figma handoff that developers actually appreciate, covering everything from accessibility annotations to file structure, error states..."
+        },
+        {
+          "id": "E9",
+          "source": "https://github.com/figma/mcp-server-guide/",
+          "title": "GitHub - figma/mcp-server-guide: A guide on how to use the ...",
+          "content": "For the complete set of Figma MCP server docs, see our developer documentation . By using the Figma MCP server and the related resources (including these skills), you agree to the Figma Developer Terms."
+        },
+        {
+          "id": "E10",
+          "source": "https://medium.com/scaleuptech/figma-for-developers-a-practical-guide-to-ui-collaboration-2a45d0f4c0e1",
+          "title": "Figma for Developers: A Practical Guide to UI Collaboration",
+          "content": "Feb 12, 2025 · Figma is an essential skill for developers working closely with UI/UX designers. Understanding its core functionalities speeds up development, ensures design accuracy, and improves..."
+        },
+        {
+          "id": "E11",
+          "source": "https://developers.figma.com/",
+          "title": "fetched page",
+          "content": "Figma Developer Docs | Developer Docs Skip to main content If you can dream it, you can build it Our developer platform puts the power in your hands to create the tools teams need to improve efficiency, expand functionality, and bring ideas to life. Take a look at our APIs, documentation, guides, and references to get started. Plugin APIs Automate tasks, add new functionality, and improve your workflow with plugins for everything from documentation to communication. View plugin docs Widget APIs Encourage team collaboration and run meetings more efficiently in FigJam with interactive games, polls, trackers, and more. View widget docs Bring Figma to you Leverage the power of our REST API to bring Figma into your external tools and products. Use our Embed kit to share or embed real-time Figma designs and prototypes to whoever, whenever you need to. Start building Automate account provisioning Simplify onboarding and offboarding with role-setting via our SCIM API. Any changes to members’ roles within your identity provider are automatically pushed to Figma—saving your team time and energy. Get started “Figma’s API has helped bring ideas we have dreamt about for ages to life.” Erik Klimczak, Principal Designer at Uber Share your builds with millions Show us what you got Publish and share what you build with the millions of users in our Figma community. View Figma community Partner with Figma Give your work more exposure when you feature your integration in our collection. View integrations Be a team player Create private plugins and widgets to keep internal information and data safe. Start building Join the club Learn from others, share your work, and extend your tool set with a diverse group of developers from around the world. Browse plugin samples on GitHub Browse widget samples on GitHub View video tutorials on YouTube Join the conversation on Discord Share Plugin API feedback Share REST API feedback Share Widget API feedback See what users are requesting Was this page helpful? Leave us feedback Community Forum Discord Server GitHub Samples"
+        },
+        {
+          "id": "E12",
+          "source": "https://developers.figma.com/docs/rest-api/",
+          "title": "fetched page",
+          "content": "Introduction | Developer Docs Skip to main content On this page Welcome to Figma, the world's first collaborative interface design tool. Figma allows designers to create and prototype their digital experiences - together in real-time and in one place - helping them turn their ideas and visions into products, faster. Figma's mission is to make design accessible to everyone. The Figma API is one of the ways we aim to do that. What can I do with the Figma API? ​ The Figma API supports access and interactions with Figma's different products. This gives you the ability to do things such as view and extract any objects or layers, and their properties from files, get usage data, or listen for events with webhooks, among other things. How does it work? ​ The Figma API is based on the REST structure. We support authentication via access tokens and OAuth2 . Requests are made via HTTP endpoints with clear functions and appropriate response codes. Endpoints allow you to perform a number of actions: Make requests for different resources: Files Images File versions Users Comments Projects Components and styles Work with variables Manage dev resources Get usage and analytics data: Activity logs Text events Library analytics Create and manage webhooks Once granted access, you can use the Figma API to inspect a JSON representation of the file. Every layer or object in a file will be represented within the file by a node (subtree). You will then be able to access and isolate the object and any properties associated with it. In addition to accessing files and layers, you will be able to GET and POST comments to files. Base URL ​ All REST API endpoints use the same base URL: https://api.figma.com For example: GET https://api.figma.com/v1/files/:key For Figma for Government, the base URL is: https://api.figma-gov.com For example: GET https://api.figma-gov.com/v1/activity_logs note Note: The REST API documentation for endpoints generally refers to the common base URL, https://api.figma.com . If you're a Figma for Government customer, replace the common base URL with the Figma for Government version. Getting started ​ If you’re not already using Figma, the first step is to sign up and create an account . Once you have a Figma account, the next step is to authenticate with the API. This can be done using either OAuth2 or access tokens . You can then browse our endpoints and start making queries against the Figma API. We recommend starting with the basics by learning about Figma f"
+        },
+        {
+          "id": "E13",
+          "source": "https://en.wikipedia.org/wiki/Figma",
+          "title": "Figma - Wikipedia",
+          "content": "Figma is an American software company that provides a platform for collaborative web application for interface design, with additional offline features enabled by desktop applications for macOS and …"
+        },
+        {
+          "id": "E14",
+          "source": "https://www.figma.com/",
+          "title": "Figma : The collaborative canvas for design, code, and AI",
+          "content": "Figma is the canvas where design, code, and AI come together. From first idea to shipped product — go from concept to production with your whole team, in one place."
+        },
+        {
+          "id": "E15",
+          "source": "https://www.figma.com/downloads/",
+          "title": "Figma Downloads | Web Design App for Desktops & Mobile",
+          "content": "Download the Figma web design app on desktop for macOS or Windows, plus the font installer and device preview apps."
+        },
+        {
+          "id": "E16",
+          "source": "https://figma.en.softonic.com/",
+          "title": "Figma - Download",
+          "content": "Jun 22, 2026 · Figma stands out as a powerful cloud-based design tool that simplifies collaboration and streamlines the UI/UX workflow. Its real-time editing, intuitive interface, and strong prototyping …"
+        },
+        {
+          "id": "E17",
+          "source": "https://www.geeksforgeeks.org/websites-apps/figma-tutorial/",
+          "title": "Figma Tutorial | Complete Beginners to Advanced UI/UX Design …",
+          "content": "Jul 23, 2025 · Figma is a powerful online design tool that allows you to create, share, and collaborate on designs seamlessly. It's a digital canvas for designing websites, apps, and graphics, accessible from …"
+        }
+      ],
+      "prices": [],
+      "audit": {
+        "gate1_failed": [],
+        "gate2_failed": [],
+        "unsupported": []
+      },
+      "trace": [
+        "validate: products=['Figma', 'Canva'] criteria=['developer_api_access', 'version_history', 'configurable_team_permissions'] pricing=False",
+        "plan#1: web_search(Figma developer API access version history configurable team)",
+        "act: search 'Figma developer API access version histo' -> 5 results",
+        "plan#2: web_search(Figma developer documentation)",
+        "act: search 'Figma developer documentation' -> 5 results",
+        "plan#3: fetch_url(https://developers.figma.com/)",
+        "act: fetch https://developers.figma.com/ -> ok (E11)",
+        "plan#4: fetch_url(https://developers.figma.com/docs/rest-api/)",
+        "act: fetch https://developers.figma.com/docs/rest-a -> ok (E12)",
+        "plan#5: web_search(Figma developer documentation version history configurable t)",
+        "act: search 'Figma developer documentation version hi' -> 5 results",
+        "plan#6: web_search(Figma developer documentation version history configurable t)",
+        "act: duplicate action skipped (web_search)",
+        "plan#7: web_search(Figma developer documentation version history configurable t)",
+        "act: duplicate action skipped (web_search)",
+        "plan#8: web_search(Figma developer documentation version history configurable t)",
+        "compare: 6 cells produced",
+        "price: not requested, skipped",
+        "draft: answer written",
+        "verify: gate1 rejected 0, gate2 rejected 0, of 1 asserted",
+        "finalize: answer rendered from verified cells"
+      ],
+      "stats": {
+        "llm_calls": 11,
+        "tool_calls": 5,
+        "steps": 8,
+        "retries": 0,
+        "revisions": 0,
+        "seconds": 20.9
+      }
+    },
+    {
+      "case_id": 8,
+      "track": "behavioral",
+      "status": "active",
+      "outcome": "PASS",
+      "input": "Compare Product Alpha and Product Beta on quantum-resistant document encryption.",
+      "assertions": {
+        "criterion_marked_unverified": true,
+        "no_present_or_unavailable_claim": true,
+        "tool_calls_within_limit": true,
+        "graph_steps_within_limit": true,
+        "run_terminates": true
+      },
+      "metrics": null,
+      "pricing": null,
+      "injection_events": [
+        {
+          "tool": "web_search",
+          "target": "Product Alpha Product Beta quantum resistant document encryption",
+          "outcome": "injected_irrelevant_results"
+        },
+        {
+          "tool": "web_search",
+          "target": "Product Alpha Product Beta quantum resistant document encryption official site",
+          "outcome": "injected_irrelevant_results"
+        },
+        {
+          "tool": "web_search",
+          "target": "Product Alpha Product Beta quantum resistant document encryption official site product page",
+          "outcome": "injected_irrelevant_results"
+        },
+        {
+          "tool": "web_search",
+          "target": "Product Alpha Product Beta quantum resistant document encryption official site news release",
+          "outcome": "injected_irrelevant_results"
+        },
+        {
+          "tool": "web_search",
+          "target": "Product Alpha Product Beta quantum resistant document encryption official site blog",
+          "outcome": "injected_irrelevant_results"
+        }
+      ],
+      "answer": "Capability comparison:\n\n- Product Alpha / quantum resistant document encryption: unverified\n- Product Beta / quantum resistant document encryption: unverified\n\nRecommendation:\nThe verified evidence does not establish a unique winner. Confirm the unverified items that matter to your team before deciding.",
+      "final": {
+        "type": "answer",
+        "cells": [
+          {
+            "product": "Product Alpha",
+            "criterion": "quantum_resistant_document_encryption",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          },
+          {
+            "product": "Product Beta",
+            "criterion": "quantum_resistant_document_encryption",
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
+          }
+        ],
+        "cost": {},
+        "sources": [
+          "https://example.com/generic-security-page"
+        ],
+        "unverified": [
+          "Product Alpha / quantum_resistant_document_encryption",
+          "Product Beta / quantum_resistant_document_encryption"
+        ],
+        "grounding_rate": 1.0
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "source": "https://example.com/generic-security-page",
+          "title": "Injected generic security result",
+          "content": "Generic security information with no statement about either requested product or capability."
+        },
+        {
+          "id": "E2",
+          "source": "https://example.com/generic-security-page",
+          "title": "Injected generic security result",
+          "content": "Generic security information with no statement about either requested product or capability."
+        },
+        {
+          "id": "E3",
+          "source": "https://example.com/generic-security-page",
+          "title": "Injected generic security result",
+          "content": "Generic security information with no statement about either requested product or capability."
+        },
+        {
+          "id": "E4",
+          "source": "https://example.com/generic-security-page",
+          "title": "Injected generic security result",
+          "content": "Generic security information with no statement about either requested product or capability."
+        },
+        {
+          "id": "E5",
+          "source": "https://example.com/generic-security-page",
+          "title": "Injected generic security result",
+          "content": "Generic security information with no statement about either requested product or capability."
+        }
+      ],
+      "prices": [],
+      "audit": {
+        "gate1_failed": [],
+        "gate2_failed": [],
+        "unsupported": []
+      },
+      "trace": [
+        "validate: products=['Product Alpha', 'Product Beta'] criteria=['quantum_resistant_document_encryption'] pricing=False",
+        "plan#1: web_search(Product Alpha Product Beta quantum resistant document encryp)",
+        "act: search 'Product Alpha Product Beta quantum resis' -> 1 results",
+        "plan#2: web_search(Product Alpha Product Beta quantum resistant document encryp)",
+        "act: search 'Product Alpha Product Beta quantum resis' -> 1 results",
+        "plan#3: web_search(Product Alpha Product Beta quantum resistant document encryp)",
+        "act: duplicate action skipped (web_search)",
+        "plan#4: web_search(Product Alpha Product Beta quantum resistant document encryp)",
+        "act: search 'Product Alpha Product Beta quantum resis' -> 1 results",
+        "plan#5: web_search(Product Alpha Product Beta quantum resistant document encryp)",
+        "act: search 'Product Alpha Product Beta quantum resis' -> 1 results",
+        "plan#6: web_search(Product Alpha Product Beta quantum resistant document encryp)",
+        "act: search 'Product Alpha Product Beta quantum resis' -> 1 results",
+        "plan#7: finish()",
+        "compare: 2 cells produced",
+        "price: not requested, skipped",
+        "draft: answer written",
+        "verify: gate1 rejected 0, gate2 rejected 0, of 0 asserted",
+        "finalize: answer rendered from verified cells"
+      ],
+      "stats": {
+        "llm_calls": 9,
+        "tool_calls": 5,
+        "steps": 7,
+        "retries": 0,
+        "revisions": 0,
+        "seconds": 10.5
+      }
+    }
+  ]
+}

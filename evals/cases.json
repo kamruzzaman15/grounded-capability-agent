@@ -1,0 +1,268 @@
+[
+  {
+    "id": 1,
+    "track": "factual",
+    "status": "active",
+    "input": "Compare Notion and ClickUp on public API access, official Slack integration, and configurable role-based permissions for a 15-person engineering team. Recommend one, prioritizing API access and permissions.",
+    "products": [
+      "Notion",
+      "ClickUp"
+    ],
+    "criteria": [
+      "public_api_access",
+      "official_slack_integration",
+      "configurable_role_based_permissions"
+    ],
+    "criterion_definitions": {
+      "public_api_access": "An officially documented API that external developers can use.",
+      "official_slack_integration": "An integration documented and maintained by the product vendor, not only through Zapier or another third party.",
+      "configurable_role_based_permissions": "The product documents distinct user roles or permission levels that administrators can configure."
+    },
+    "gold_key_ref": "gold_key.case_1",
+    "source_policy": {
+      "official_sources_only": true,
+      "labeled_at": "2026-07-19"
+    },
+    "assertions": {
+      "all_cells_match_gold": true,
+      "all_polarized_cells_have_quote": true,
+      "quote_must_entail_label": true,
+      "recommendation_must_follow_priority": true
+    },
+    "expect_clarify": false
+  },
+  {
+    "id": 2,
+    "track": "factual",
+    "status": "active",
+    "input": "Compare Asana and Trello on built-in time tracking and workload-capacity views for a small team.",
+    "products": [
+      "Asana",
+      "Trello"
+    ],
+    "criteria": [
+      "built_in_time_tracking",
+      "workload_capacity_view"
+    ],
+    "criterion_definitions": {
+      "built_in_time_tracking": "Time tracking available directly inside the product without requiring an external integration.",
+      "workload_capacity_view": "A documented interface that shows assigned work or capacity across multiple team members."
+    },
+    "allowed_labels": [
+      "verified_present",
+      "verified_unavailable",
+      "unverified"
+    ],
+    "label_rules": {
+      "verified_present": "Requires an official quote explicitly documenting the capability.",
+      "verified_unavailable": "Requires an official quote explicitly stating that the capability is unavailable, unsupported, or requires another product.",
+      "unverified": "Used when no checked official source supports either polarity."
+    },
+    "gold_key_ref": "gold_key.case_2",
+    "source_policy": {
+      "official_sources_only": true,
+      "labeled_at": "2026-07-19"
+    },
+    "assertions": {
+      "all_cells_match_gold": true,
+      "no_absence_inferred_from_silence": true,
+      "quote_must_entail_label": true
+    },
+    "expect_clarify": false
+  },
+  {
+    "id": 3,
+    "track": "behavioral",
+    "status": "active",
+    "input": "Compare Linear and Height on end-to-end encryption of document content and FedRAMP authorization for a 15-person team.",
+    "products": [
+      "Linear",
+      "Height"
+    ],
+    "criteria": [
+      "end_to_end_encryption_of_document_content",
+      "fedramp_authorization"
+    ],
+    "allowed_labels": [
+      "verified_present",
+      "verified_unavailable",
+      "unverified"
+    ],
+    "assertions": {
+      "all_unresolved_cells_marked_unverified": true,
+      "no_present_or_unavailable_without_quote": true,
+      "absence_of_evidence_not_treated_as_absence": true,
+      "all_final_claims_grounded": true
+    },
+    "expect_clarify": false
+  },
+  {
+    "id": 4,
+    "track": "behavioral",
+    "status": "active",
+    "input": "Compare Miro and Mural on real-time collaboration and official Slack integration using official documentation.",
+    "products": [
+      "Miro",
+      "Mural"
+    ],
+    "criteria": [
+      "real_time_collaboration",
+      "official_slack_integration"
+    ],
+    "failure_injection": {
+      "tool": "extract_page",
+      "url_pattern": "mural",
+      "failure_mode": "timeout",
+      "failures_before_success": 1
+    },
+    "expected_trace": [
+      "initial_extraction_failed",
+      "retry_or_alternative_source_attempted",
+      "criterion_resolved_or_marked_unverified"
+    ],
+    "assertions": {
+      "failure_detected": true,
+      "retry_count_at_least": 1,
+      "different_query_or_source_used": true,
+      "no_fabricated_claims": true,
+      "run_terminates_within_step_limit": true
+    },
+    "notes": "different_query_or_source_used is planner-driven and therefore model-dependent against live Ollama; it is deterministic only in the mocked verifier.",
+    "expect_clarify": false
+  },
+  {
+    "id": 5,
+    "track": "factual",
+    "status": "active",
+    "input": "Compare Notion and ClickUp on collaboration capabilities and calculate the estimated annual cost for 20 users using each product's lowest publicly listed paid team plan, billed annually in USD.",
+    "products": [
+      "Notion",
+      "ClickUp"
+    ],
+    "criteria": [
+      "collaboration_capabilities",
+      "annual_cost_for_20_users"
+    ],
+    "pricing_rules": {
+      "currency": "USD",
+      "billing_frequency": "annual",
+      "team_size": 20,
+      "plan_selection": "lowest publicly listed paid collaborative team plan",
+      "exclude": [
+        "taxes",
+        "promotional discounts",
+        "custom enterprise pricing",
+        "optional add-ons"
+      ],
+      "formula": "monthly_per_user_price * 20 * 12"
+    },
+    "gold_key_ref": "gold_key.case_5",
+    "assertions": {
+      "price_has_supporting_quote": true,
+      "billing_frequency_identified": true,
+      "plan_name_identified": true,
+      "calculation_matches_cited_price": true,
+      "calculator_tool_used": true,
+      "unverified_if_price_cannot_be_confirmed": true
+    },
+    "expect_clarify": false
+  },
+  {
+    "id": 6,
+    "track": "behavioral",
+    "status": "known_gap",
+    "input": "Which is better, Notion or ClickUp?",
+    "products": [
+      "Notion",
+      "ClickUp"
+    ],
+    "criteria": [],
+    "assertions": {
+      "asks_clarifying_question": true,
+      "does_not_start_research": true,
+      "does_not_make_recommendation": true
+    },
+    "known_gap": {
+      "capability": "multi_turn_resume",
+      "description": "The agent asks a clarifying question and stops at END. It does not carry state into a second turn, so resuming after the user answers (preserving products, adding the new criteria, continuing without repeating the question) is not implemented. Only the clarifying-question behavior is asserted here.",
+      "not_tested": [
+        "resumes_existing_state",
+        "products_preserved_across_turns",
+        "criteria_added_from_clarification",
+        "research_starts_after_clarification",
+        "does_not_repeat_initial_question"
+      ]
+    },
+    "expect_clarify": true
+  },
+  {
+    "id": 7,
+    "track": "factual",
+    "status": "active",
+    "input": "Compare Figma and Canva on developer API access, version history, and configurable team permissions for a product design team.",
+    "products": [
+      "Figma",
+      "Canva"
+    ],
+    "criteria": [
+      "developer_api_access",
+      "version_history",
+      "configurable_team_permissions"
+    ],
+    "criterion_definitions": {
+      "developer_api_access": "An officially documented API available for external development.",
+      "version_history": "An officially documented feature for viewing or restoring earlier versions.",
+      "configurable_team_permissions": "Documented administrative controls for assigning distinct roles or permissions."
+    },
+    "gold_key_ref": "gold_key.case_7",
+    "source_policy": {
+      "official_sources_only": true,
+      "labeled_at": "2026-07-19"
+    },
+    "assertions": {
+      "all_cells_match_gold": true,
+      "all_polarized_cells_have_quote": true,
+      "quote_must_entail_label": true
+    },
+    "expect_clarify": false
+  },
+  {
+    "id": 8,
+    "track": "behavioral",
+    "status": "active",
+    "input": "Compare Product Alpha and Product Beta on quantum-resistant document encryption.",
+    "products": [
+      "Product Alpha",
+      "Product Beta"
+    ],
+    "criteria": [
+      "quantum_resistant_document_encryption"
+    ],
+    "failure_injection": {
+      "tool": "search_web",
+      "mode": "repeated_irrelevant_results",
+      "returned_urls": [
+        "https://example.com/generic-security-page"
+      ],
+      "repeat_count": 10
+    },
+    "limits": {
+      "max_retries_per_criterion": 2,
+      "max_total_tool_calls": 8,
+      "max_graph_steps": 12
+    },
+    "assertions": {
+      "criterion_marked_unverified": true,
+      "no_present_or_unavailable_claim": true,
+      "tool_calls_within_limit": true,
+      "graph_steps_within_limit": true,
+      "run_terminates": true
+    },
+    "assertions_to_build": {
+      "duplicate_results_detected": true,
+      "no_progress_detected": true,
+      "_note": "The agent currently terminates because of the step and retry caps, not because it explicitly detects duplicate URLs or lack of progress. These two assertions require dedup/no-progress logic that is not yet implemented, so they are not enforced until that logic is built."
+    },
+    "expect_clarify": false
+  }
+]

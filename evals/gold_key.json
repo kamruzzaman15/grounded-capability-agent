@@ -1,0 +1,262 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "verified_at": "2026-07-19",
+    "label_vocabulary": ["verified_present", "verified_unavailable", "unverified"],
+    "source_policy": "Official vendor documentation, help centers, developer documentation, and pricing pages only.",
+    "label_definitions": {
+      "verified_present": "An official source explicitly documents the capability.",
+      "verified_unavailable": "An official source explicitly states that the capability is unavailable or unsupported.",
+      "unverified": "No checked official source was sufficient to support either verified_present or verified_unavailable."
+    },
+    "entailment_self_check": {
+      "meaning": "Whether the stored quote, on its own, entails the label for the criterion as defined. 'pass' = quote entails it; 'weak' = quote shows the capability loosely but not the specific mechanism the definition demands, replace with a stronger quote before trusting quote_must_entail_label; 'unverifiable' = the source could not be confirmed automatically.",
+      "why_it_matters": "cases_improved_v2.json asserts quote_must_entail_label on cases 1, 2, and 7. A gold key must pass its own entailment gate, or it will reject an agent's correct answer. Fix every 'weak' or 'unverifiable' cell before a scored run."
+    },
+    "verification_status": "ClickUp configurable_role_based_permissions quote was strengthened from a live fetch on 2026-07-19. Canva configurable_team_permissions could not be fetched (the page blocked automated access) and its quote is unconfirmed. All other quotes are author-provided and MUST be confirmed verbatim against the live page before a scored run. Pricing figures drift; re-confirm case_5 numbers each run.",
+    "important_note": "Unverified is a bounded evaluation label, not a universal claim that the feature does not exist. Documentation and prices change, so re-verify dated gold keys and reset verified_at before future runs."
+  },
+
+  "case_1": {
+    "input_summary": "Notion vs ClickUp: public API, official Slack integration, configurable role-based permissions.",
+    "cells": [
+      {
+        "product": "Notion",
+        "criterion": "public_api_access",
+        "label": "verified_present",
+        "source_url": "https://developers.notion.com/guides/get-started/overview",
+        "source_title": "Overview - Notion Developers",
+        "quote": "With the REST API, you can read, create, and update nearly everything in a workspace.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official Notion developer documentation explicitly describes external REST API access."
+      },
+      {
+        "product": "Notion",
+        "criterion": "official_slack_integration",
+        "label": "verified_present",
+        "source_url": "https://www.notion.com/help/slack",
+        "source_title": "Integrate Slack - Notion Help Center",
+        "quote": "Notion's integration with Slack enables seamless communication between the two platforms.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official Notion help page for a vendor-maintained Slack integration. Phrasing is promotional; a mechanism-level quote would be stronger but this clears the vendor-documented bar."
+      },
+      {
+        "product": "Notion",
+        "criterion": "configurable_role_based_permissions",
+        "label": "verified_present",
+        "source_url": "https://www.notion.com/help/add-members-admins-guests-and-groups",
+        "source_title": "Manage members & guests - Notion Help Center",
+        "quote": "Select the dropdown for a member's role, then select Workspace owner, Membership admin, or Member.",
+        "entailment_self_check": "pass",
+        "verification_note": "Shows administrators assigning distinct workspace roles. Strong entailment."
+      },
+      {
+        "product": "ClickUp",
+        "criterion": "public_api_access",
+        "label": "verified_present",
+        "source_url": "https://developer.clickup.com/",
+        "source_title": "ClickUp API",
+        "quote": "Build integrations and apps with our Public API.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official ClickUp developer documentation explicitly identifies a public API."
+      },
+      {
+        "product": "ClickUp",
+        "criterion": "official_slack_integration",
+        "label": "verified_present",
+        "source_url": "https://help.clickup.com/hc/en-us/articles/6304922742295-Intro-to-the-integration-with-Slack",
+        "source_title": "Intro to the integration with Slack - ClickUp Help",
+        "quote": "The integration with Slack is available on every ClickUp plan.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official ClickUp help documentation for a vendor Slack integration."
+      },
+      {
+        "product": "ClickUp",
+        "criterion": "configurable_role_based_permissions",
+        "label": "verified_present",
+        "source_url": "https://help.clickup.com/hc/en-us/articles/6309195687959-Manage-Custom-Role-permissions",
+        "source_title": "Manage Custom Role permissions - ClickUp Help",
+        "quote": "Owners can enable or disable role permissions. They can also delegate managing custom role permissions to custom admins.",
+        "entailment_self_check": "pass",
+        "verification_note": "Quote strengthened from a live fetch on 2026-07-19; the prior quote ('Create new custom roles...') showed roles exist but not admin configurability. Plan caveat: custom roles require Business Plus or higher, though default Owner/Admin/Member/Guest roles exist on all plans.",
+        "plan_dependency": "Custom roles: Business Plus (one role) / Enterprise (unlimited). Base roles: all plans."
+      }
+    ],
+    "recommendation_expectation": {
+      "type": "evidence_consistent",
+      "expected": "Do not declare a decisive winner from capability presence alone; both products are verified present on all three criteria. A tie or qualified recommendation is acceptable. Any preference must cite additional plan-level or workflow evidence."
+    }
+  },
+
+  "case_2": {
+    "input_summary": "Asana vs Trello: built-in time tracking and workload-capacity views.",
+    "cells": [
+      {
+        "product": "Asana",
+        "criterion": "built_in_time_tracking",
+        "label": "verified_present",
+        "source_url": "https://help.asana.com/s/article/time-tracking-in-asana",
+        "source_title": "Time tracking in Asana - Asana Help Center",
+        "quote": "You can track actual time using the built-in timer or by entering time manually.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official page explicitly states Asana has a built-in timer."
+      },
+      {
+        "product": "Asana",
+        "criterion": "workload_capacity_view",
+        "label": "verified_present",
+        "source_url": "https://help.asana.com/s/article/portfolio-workload-and-universal-workload",
+        "source_title": "How to use workload to manage team capacity in Asana",
+        "quote": "Workload gives you a visual snapshot of team capacity and a closer look into what your team is working on.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official page explicitly documents a visual team-capacity view."
+      },
+      {
+        "product": "Trello",
+        "criterion": "built_in_time_tracking",
+        "label": "unverified",
+        "source_url": null,
+        "source_title": null,
+        "quote": null,
+        "checked_official_sources": [
+          "https://support.atlassian.com/trello/docs/what-is-trello/",
+          "https://support.atlassian.com/trello/docs/power-ups-made-by-trello/"
+        ],
+        "entailment_self_check": "pass",
+        "verification_note": "Checked official sources did not explicitly document built-in time tracking, nor explicitly state it is unavailable. Safe label is unverified, not unavailable."
+      },
+      {
+        "product": "Trello",
+        "criterion": "workload_capacity_view",
+        "label": "unverified",
+        "source_url": null,
+        "source_title": null,
+        "quote": null,
+        "checked_official_sources": [
+          "https://support.atlassian.com/trello/docs/timeline-view/",
+          "https://support.atlassian.com/trello/docs/trello-dashcards/",
+          "https://support.atlassian.com/trello/docs/what-is-trello/"
+        ],
+        "entailment_self_check": "pass",
+        "verification_note": "Trello documents timeline grouping and work-tracking views, but the checked sources did not clearly document a team-capacity view under the test definition. Safe label is unverified."
+      }
+    ]
+  },
+
+  "case_5": {
+    "input_summary": "Notion vs ClickUp: collaboration plus annual cost for 20 users on the lowest paid collaborative plan, billed yearly in USD.",
+    "pricing": [
+      {
+        "product": "Notion",
+        "plan_name": "Plus",
+        "label": "verified_present",
+        "monthly_per_user_usd_billed_yearly": 10,
+        "team_size": 20,
+        "months": 12,
+        "expected_annual_cost_usd": 2400,
+        "calculation": "10 * 20 * 12",
+        "source_url": "https://www.notion.com/pricing",
+        "source_title": "Notion Pricing Plans",
+        "quote": "$10 per member / month",
+        "billing_context_quote": "Pay yearly",
+        "entailment_self_check": "pass",
+        "verification_note": "Plus is the lowest publicly listed paid plan for small teams. RE-CONFIRM the figure: pricing pages drift and are the most perishable cell in this key."
+      },
+      {
+        "product": "ClickUp",
+        "plan_name": "Unlimited",
+        "label": "verified_present",
+        "monthly_per_user_usd_billed_yearly": 7,
+        "team_size": 20,
+        "months": 12,
+        "expected_annual_cost_usd": 1680,
+        "calculation": "7 * 20 * 12",
+        "source_url": "https://clickup.com/pricing",
+        "source_title": "ClickUp Pricing and Plans",
+        "quote": "$7 Per user/month, billed yearly",
+        "billing_context_quote": "$7 Per user/month, billed yearly",
+        "entailment_self_check": "pass",
+        "verification_note": "Unlimited is the lowest publicly listed paid ClickUp plan. RE-CONFIRM the figure each run."
+      }
+    ],
+    "collaboration_capabilities": {
+      "scoring_mode": "grounding_only",
+      "gold_label": null,
+      "reason": "'Collaboration capabilities' is too broad for one stable binary gold label. Score whether each collaboration claim the agent makes is supported by an official quote, not against a fixed label."
+    },
+    "expected_cost_comparison": {
+      "lower_cost_product": "ClickUp",
+      "annual_difference_usd": 720,
+      "calculation": "2400 - 1680",
+      "note": "Valid only if both prices above are re-confirmed current."
+    }
+  },
+
+  "case_7": {
+    "input_summary": "Figma vs Canva: developer API, version history, configurable team permissions.",
+    "cells": [
+      {
+        "product": "Figma",
+        "criterion": "developer_api_access",
+        "label": "verified_present",
+        "source_url": "https://developers.figma.com/docs/rest-api/",
+        "source_title": "Introduction - Figma Developer Docs",
+        "quote": "The Figma API supports access and interactions with Figma's different products.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official Figma developer documentation explicitly describes its REST API."
+      },
+      {
+        "product": "Figma",
+        "criterion": "version_history",
+        "label": "verified_present",
+        "source_url": "https://help.figma.com/hc/en-us/articles/360039831974-Explore-the-navigation-bar-and-left-sidebar",
+        "source_title": "Explore the navigation bar and left sidebar - Figma Help",
+        "quote": "The Edit file menu allows you to perform file-specific actions, such as viewing its version history.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official Figma help documentation explicitly documents access to version history."
+      },
+      {
+        "product": "Figma",
+        "criterion": "configurable_team_permissions",
+        "label": "verified_present",
+        "source_url": "https://help.figma.com/hc/en-us/articles/360039970673-Team-permissions",
+        "source_title": "Team permissions - Figma Help",
+        "quote": "Team permissions define what actions someone can take at the team level.",
+        "entailment_self_check": "weak",
+        "needs_stronger_quote": true,
+        "verification_note": "The quote defines that team permissions exist but does not show administrators assigning DISTINCT configurable roles, which the criterion demands. Replace with a verbatim quote naming the distinct roles (e.g. admin/editor/viewer) or the admin action of changing a member's role. Label is likely correct; the evidence is what needs strengthening before quote_must_entail_label will pass."
+      },
+      {
+        "product": "Canva",
+        "criterion": "developer_api_access",
+        "label": "verified_present",
+        "source_url": "https://www.canva.dev/docs/connect/",
+        "source_title": "Canva Connect APIs Documentation",
+        "quote": "The Canva Connect APIs let you integrate Canva's capabilities into your own web apps and platforms.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official Canva developer documentation explicitly describes external Connect APIs."
+      },
+      {
+        "product": "Canva",
+        "criterion": "version_history",
+        "label": "verified_present",
+        "source_url": "https://www.canva.com/help/version-history/",
+        "source_title": "Review and restore older versions of designs - Canva Help Center",
+        "quote": "Restore an older version of your design from the File menu in the editor.",
+        "entailment_self_check": "pass",
+        "verification_note": "Official Canva help documentation explicitly documents restoring prior versions."
+      },
+      {
+        "product": "Canva",
+        "criterion": "configurable_team_permissions",
+        "label": "verified_present",
+        "source_url": "https://www.canva.com/help/roles-and-permissions/",
+        "source_title": "Canva roles and permissions - Canva Help Center",
+        "quote": "Canva offers flexible roles and permissions.",
+        "entailment_self_check": "unverifiable",
+        "needs_stronger_quote": true,
+        "verification_note": "Could not confirm on 2026-07-19: the Canva page blocked automated fetch. The stored quote is also promotional, not a mechanism-level statement, so it would likely fail a strict entailment gate. Open the page in a browser and replace with a verbatim quote naming the distinct roles or the admin action of assigning them before a scored run."
+      }
+    ]
+  }
+}
