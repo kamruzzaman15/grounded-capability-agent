@@ -59,7 +59,6 @@
       "failure_detected": true,
       "retry_count_at_least": 1,
       "different_query_or_source_used": true,
-      "no_fabricated_claims": true,
       "run_terminates_within_step_limit": true
     },
     "notes": "different_query_or_source_used is planner-driven and therefore model-dependent against live Ollama; it is deterministic only in the mocked verifier.",
