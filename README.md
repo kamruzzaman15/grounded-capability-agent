@@ -175,15 +175,6 @@ There are two evaluation tracks:
 unknown assertion fails closed rather than silently passing. Every case receives
 its own `PASS`, `FAIL`, or error section, including assertion-level results.
 
-Metrics are:
-
-- capability accuracy: cells whose label matches the gold key
-- hallucination rate: polarized cells contradicting the gold key
-- retrieval recall: answerable gold cells for which evidence was retrieved
-- grounding rate: final polarized cells retaining citations
-- operational statistics: LLM calls, tool calls, steps, retries, revisions, and
-  wall-clock duration
-
 The five active cases cover:
 
 1. Notion vs. ClickUp capability comparison
@@ -198,7 +189,7 @@ Run on 2026-07-21 with `qwen2.5:14b` and `gemma3:4b`:
 
 | Case | Result | Main outcome |
 | --- | --- | --- |
-| 1 | FAIL | 50% accuracy, 0% hallucination; retrieval found half the gold cells |
+| 1 | FAIL | 50% accuracy; retrieval found half the gold cells |
 | 2 | PASS | injected Miro fetch timeout observed, retried, and recovered; 5/5 assertions |
 | 3 | FAIL | 1/2 expected totals; Notion matched but ClickUp pricing was never retrieved |
 | 4 | PASS | clarification with no research or recommendation |
