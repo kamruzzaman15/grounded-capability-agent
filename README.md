@@ -27,10 +27,6 @@ cases. It used 72 LLM calls, 45 tool calls, 51 planning steps, 7 retries, and
 finished in 135.9 seconds. All factual runs had a final grounding rate of 100%;
 factual accuracy was still limited by retrieval coverage, as described below.
 
-Offline verification currently passes:
-
-- 12/12 unit tests
-- 10/10 deterministic mocked evaluation checks
 
 ## Setup and commands
 
