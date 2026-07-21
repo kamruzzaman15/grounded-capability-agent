@@ -280,7 +280,7 @@ product/criterion pair has at least one targeted research attempt.
 
 ## Use of AI assistants
 
-An AI coding assistant helped draft scaffolding and implementation changes. I
+An AI coding assistant (ClaudeCode) helped draft scaffolding and implementation changes. I
 directed the design, reviewed the output, ran model comparisons, and selected the
 final tradeoffs. The decisions retained as project design are the three-state
 grounding vocabulary, separate generator and reviewer families, deterministic
