@@ -319,7 +319,6 @@
         "failure_detected": true,
         "retry_count_at_least": true,
         "different_query_or_source_used": true,
-        "no_fabricated_claims": true,
         "run_terminates_within_step_limit": true
       },
       "metrics": null,
