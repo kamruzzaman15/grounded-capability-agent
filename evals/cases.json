@@ -46,7 +46,7 @@
     ],
     "failure_injection": {
       "tool": "extract_page",
-      "url_pattern": "mural",
+      "url_pattern": "miro",
       "failure_mode": "timeout",
       "failures_before_success": 1
     },

@@ -50,11 +50,14 @@ if retries are exhausted. Duplicate actions are skipped and a no-progress stall
 counter prevents an infinite loop.
 
 The live evaluator now consumes the failure specifications in `cases.json`.
-Case 2 is configured to inject one Mural timeout when the planner fetches a
-matching URL. The latest run never selected a Mural URL, so the failure-detected
-assertion correctly failed rather than awarding recovery credit. Case 5 returns
-repeated irrelevant search results and asserts bounded termination with
-unverified cells.
+Case 2 injects one timeout on the first fetched Miro/Mural URL. It originally
+targeted `mural`, but the planner consistently fetches `miro.com` first and
+never reached a Mural URL within its step budget, so the failure was never
+exercised and `failure_detected` correctly failed rather than awarding
+uncredited recovery. The pattern now targets `miro` instead, since that is the
+URL the planner reliably fetches early, so the injected failure is actually
+exercised. Case 5 returns repeated irrelevant search results and asserts
+bounded termination with unverified cells.
 This is complemented by deterministic mocked tests that exercise retry,
 fallback, quotation rejection, entailment rejection, pricing guards, and
 clarification without Ollama or network access.

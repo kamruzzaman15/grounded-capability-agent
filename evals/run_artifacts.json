@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T06:40:23.071835+00:00",
+  "generated_at": "2026-07-21T07:01:59.847102+00:00",
   "generator_model": "qwen2.5:14b",
   "reviewer_model": "gemma3:4b",
   "cases": [
@@ -16,14 +16,14 @@
         "recommendation_must_follow_priority": false
       },
       "metrics": {
-        "capability_accuracy": 0.16666666666666666,
+        "capability_accuracy": 0.5,
         "hallucination_rate": 0.0,
-        "retrieval_recall": 0.16666666666666666,
+        "retrieval_recall": 0.5,
         "grounding_rate": 1.0
       },
       "pricing": null,
       "injection_events": [],
-      "answer": "Capability comparison:\n\n- Notion / public api access: unverified\n- ClickUp / public api access: verified_present [E12]\n- Notion / official slack integration: unverified\n- ClickUp / official slack integration: unverified\n- Notion / configurable role based permissions: unverified\n- ClickUp / configurable role based permissions: unverified\n\nRecommendation:\nBased only on the verified capabilities above, ClickUp has the strongest documented coverage. Confirm every unverified item that matters to your team before deciding.",
+      "answer": "Capability comparison:\n\n- Notion / public api access: unverified\n- ClickUp / public api access: verified_present [E4]\n- Notion / official slack integration: unverified\n- ClickUp / official slack integration: verified_present [E8]\n- Notion / configurable role based permissions: unverified\n- ClickUp / configurable role based permissions: verified_present [E10]\n\nRecommendation:\nBased only on the verified capabilities above, ClickUp has the strongest documented coverage. Confirm every unverified item that matters to your team before deciding.",
       "final": {
         "type": "answer",
         "cells": [
@@ -38,8 +38,8 @@
             "product": "ClickUp",
             "criterion": "public_api_access",
             "label": "verified_present",
-            "citation_id": "E12",
-            "quote": "ClickUp API docs can all be executed against your ClickUp account. Eith provide the UI with your personal API key or login and your credentials will be prefilled."
+            "citation_id": "E4",
+            "quote": "Develop innovative solutions with the ClickUp API Build integrations and apps with our Public API"
           },
           {
             "product": "Notion",
@@ -51,9 +51,9 @@
           {
             "product": "ClickUp",
             "criterion": "official_slack_integration",
-            "label": "unverified",
-            "citation_id": "",
-            "quote": ""
+            "label": "verified_present",
+            "citation_id": "E8",
+            "quote": "Create tasks from Slack channels or direct messages, set up channel-specific syncs to ensure all stakeholders see updates, and connect all of your tools using the integration with Slack"
           },
           {
             "product": "Notion",
@@ -65,158 +65,207 @@
           {
             "product": "ClickUp",
             "criterion": "configurable_role_based_permissions",
-            "label": "unverified",
-            "citation_id": "",
-            "quote": ""
+            "label": "verified_present",
+            "citation_id": "E10",
+            "quote": "Secure your ClickUp API integrations with enterprise-grade OAuth 2.0, role - based access control (RBAC), and workspace management using Claude Code"
           }
         ],
         "cost": {},
         "sources": [
-          "https://apps.microsoft.com/detail/xpdbvss44r0l9h",
+          "",
+          "https://api-docs.deepseek.com/",
+          "https://clickup.app.link/v4vtkbtqHib",
+          "https://clickup.com/",
+          "https://clickup.com/download",
+          "https://consultevo.com/clickup-custom-roles-api-guide/",
+          "https://consultevo.com/clickup-public-doc-api-guide/",
           "https://developer.clickup.com/",
           "https://developer.clickup.com/docs/Getting+Started",
+          "https://developers.notion.com/guides/get-started/authorization",
           "https://developers.notion.com/guides/get-started/overview",
-          "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
-          "https://github.com/info812/notion-and-clickup/blob/main/README.md",
+          "https://docs.slack.dev/apis/",
+          "https://en.wikipedia.org/wiki/ClickUp",
+          "https://github.com/lpg2709/clickup_api",
+          "https://grokipedia.com/page/ClickUp_API",
           "https://help.clickup.com/hc/en-us/articles/30395368157847-Notion-integration",
-          "https://lovable.dev/",
-          "https://notion.notion.site/",
-          "https://pipedream.com/apps/notion/integrations/clickup/get-task-comments-with-clickup-api-on-new-or-updated-page-in-database-by-timestamp-from-notion-api-int_OqsqDgWY",
-          "https://play.google.com/store/apps/details?id=notion.id&hl=en-US",
-          "https://www.guvi.in/blog/clickup-guide-for-software-development-projects/",
-          "https://www.notion.com/",
-          "https://www.notion.com/connections/clickup",
-          "https://www.youtube.com/watch?v=U1qumwESWrQ"
+          "https://help.clickup.com/hc/en-us/articles/6304922742295-Intro-to-the-integration-with-Slack",
+          "https://latenode.com/integrations/clickup",
+          "https://mcpmarket.com/tools/skills/clickup-enterprise-rbac",
+          "https://slack.com/marketplace/A049JV0H0KC-notion",
+          "https://sotion.so/blog/notion-slack-integration",
+          "https://www.notion.com/help/guides/unleashing-productivity-with-notions-slack-integration",
+          "https://www.notion.com/help/slack",
+          "https://www.suptask.com/blog/connect-slack-and-notion"
         ],
         "unverified": [
           "Notion / public_api_access",
           "Notion / official_slack_integration",
-          "ClickUp / official_slack_integration",
-          "Notion / configurable_role_based_permissions",
-          "ClickUp / configurable_role_based_permissions"
+          "Notion / configurable_role_based_permissions"
         ],
         "grounding_rate": 1.0
       },
       "evidence": [
         {
           "id": "E1",
-          "source": "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
-          "title": "Notion (productivity software ) - Wikipedia",
-          "content": "Notion is a productivity and note-taking application developed by Notion Labs, Inc. It serves as a workspace for notetaking, knowledge management, data organization, and project and task tracking."
+          "source": "https://help.clickup.com/hc/en-us/articles/30395368157847-Notion-integration",
+          "title": "Notion integration – ClickUp Help",
+          "content": "You can add the Notion integration back to your Workspace at any time. OAuth scopes ClickUp does not define scopes in code. Instead, permissions are managed entirely in the Notion OAuth modal. Below is a table of all OAuth scopes for the Notion integration so you can make informed security and compliance decisions before enabling it in your ..."
         },
         {
           "id": "E2",
-          "source": "https://www.notion.com/",
-          "title": "The AI workspace that works for you. | Notion",
-          "content": "Notion is always at home right in your browser. Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster."
+          "source": "https://developers.notion.com/guides/get-started/authorization",
+          "title": "Authorization - Notion Docs",
+          "content": "Sep 3, 2025 · Authorization is the process of granting a connection or token access to Notion data. Internal connections use a static API token, personal access tokens use a user-scoped static API token, and public connections use the OAuth 2.0 protocol."
         },
         {
           "id": "E3",
-          "source": "https://apps.microsoft.com/detail/xpdbvss44r0l9h",
-          "title": "Notion - Download and install on Windows | Microsoft Store",
-          "content": "Notion is the AI workspace that works for you. It's the one place to write, plan, centralize knowledge, and get projects done—with AI to find answers and automate tasks."
-        },
-        {
-          "id": "E4",
-          "source": "https://notion.notion.site/",
-          "title": "Notion Official | Notion",
-          "content": "Got more questions? Message us in the app or email us at team@makenotion.com."
-        },
-        {
-          "id": "E5",
-          "source": "https://play.google.com/store/apps/details?id=notion.id&hl=en-US",
-          "title": "Notion : Notes, Tasks, AI - Apps on Google Play",
-          "content": "Whether you’re tracking personal to-do lists, writing and organizing class notes, or managing projects with a team, Notion helps users plan work, stay organized, and achieve goals."
-        },
-        {
-          "id": "E6",
-          "source": "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
-          "title": "Notion (productivity software ) - Wikipedia",
-          "content": "Notion is a productivity and note-taking application developed by Notion Labs, Inc. It serves as a workspace for notetaking, knowledge management, data organization, and project and task tracking."
-        },
-        {
-          "id": "E7",
-          "source": "https://www.notion.com/",
-          "title": "The AI workspace that works for you. | Notion",
-          "content": "Notion is always at home right in your browser. Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster."
-        },
-        {
-          "id": "E8",
-          "source": "https://apps.microsoft.com/detail/xpdbvss44r0l9h",
-          "title": "Notion - Download and install on Windows | Microsoft Store",
-          "content": "Notion is the AI workspace that works for you. It's the one place to write, plan, centralize knowledge, and get projects done—with AI to find answers and automate tasks."
-        },
-        {
-          "id": "E9",
-          "source": "https://notion.notion.site/",
-          "title": "Notion Official | Notion",
-          "content": "Got more questions? Message us in the app or email us at team@makenotion.com."
-        },
-        {
-          "id": "E10",
-          "source": "https://play.google.com/store/apps/details?id=notion.id&hl=en-US",
-          "title": "Notion : Notes, Tasks, AI - Apps on Google Play",
-          "content": "Whether you’re tracking personal to-do lists, writing and organizing class notes, or managing projects with a team, Notion helps users plan work, stay organized, and achieve goals."
-        },
-        {
-          "id": "E11",
-          "source": "https://help.clickup.com/hc/en-us/articles/30395368157847-Notion-integration",
-          "title": "Notion integration – ClickUp Help",
-          "content": "Preview and search your Notion pages and databases from ClickUp !What you'll need The Notion integration is available on every ClickUp plan. Guests and limited members cannot use the Notion integr..."
-        },
-        {
-          "id": "E12",
-          "source": "https://developer.clickup.com/docs/Getting+Started",
-          "title": "Get Started with the ClickUp API - developer.clickup.com",
-          "content": "ClickUp API docs can all be executed against your ClickUp account. Eith provide the UI with your personal API key or login and your credentials will be prefilled. The following guides give a quickstart on how to use the ClickUp API and expand on the features available."
-        },
-        {
-          "id": "E13",
           "source": "https://developers.notion.com/guides/get-started/overview",
           "title": "Overview - Notion Docs",
           "content": "Sep 3, 2025 · Discover what Notion connections are, when to use each type, and what you can build."
         },
         {
+          "id": "E4",
+          "source": "https://developer.clickup.com/",
+          "title": "ClickUp",
+          "content": "Develop innovative solutions with the ClickUp API Build integrations and apps with our Public API . Connect your AI with ClickUp using our MCP Server."
+        },
+        {
+          "id": "E5",
+          "source": "https://docs.slack.dev/apis/",
+          "title": "Slack APIs | Slack Developer Docs",
+          "content": "Every Slack app and workflow has access to a range of APIs that provide access to read, write, and update many types of data in Slack ."
+        },
+        {
+          "id": "E6",
+          "source": "https://developer.clickup.com/",
+          "title": "fetched page",
+          "content": "ClickUp For AI agents: visit https://developer.clickup.com/llms.txt for an index of all pages formatted in Markdown and endpoints in OpenAPI. Develop innovative solutions with the ClickUp API Build integrations and apps with our Public API. Connect your AI with ClickUp using our MCP Server. API Browse our Public API specification. MCP Use ClickUp right from your AI assistant. Webhooks Trigger workflows from ClickUp events. OAuth Let people sign into their ClickUp account. Get started with the API Try the API Download the spec Get started with the MCP MCP setup instructions MCP tools Get support Contact ClickUp support Share your feedback"
+        },
+        {
+          "id": "E7",
+          "source": "https://developer.clickup.com/docs/Getting+Started",
+          "title": "Get Started with the ClickUp API",
+          "content": "ClickUp API 2.0 Build your own custom integrations and ClickUp apps with our public Application Programming Interface ( API )."
+        },
+        {
+          "id": "E8",
+          "source": "https://help.clickup.com/hc/en-us/articles/6304922742295-Intro-to-the-integration-with-Slack",
+          "title": "Intro to the integration with Slack - ClickUp Help",
+          "content": "Create tasks from Slack channels or direct messages, set up channel-specific syncs to ensure all stakeholders see updates, and connect all of your tools using the integration with Slack ."
+        },
+        {
+          "id": "E9",
+          "source": "https://grokipedia.com/page/ClickUp_API",
+          "title": "ClickUp API — Grokipedia",
+          "content": "The ClickUp API is the official public application programming interface provided by ClickUp, a cloud- based productivity and project management platform, enabling developers to build custom integrations , applications, and automated workflows that interact programmatically with ClickUp's resources. [5]"
+        },
+        {
+          "id": "E10",
+          "source": "https://mcpmarket.com/tools/skills/clickup-enterprise-rbac",
+          "title": "ClickUp Enterprise RBAC | Claude Code Skill for API v2",
+          "content": "Secure your ClickUp API integrations with enterprise-grade OAuth 2.0, role - based access control (RBAC), and workspace management using Claude Code."
+        },
+        {
+          "id": "E11",
+          "source": "https://consultevo.com/clickup-custom-roles-api-guide/",
+          "title": "Manage Custom Roles in ClickUp -",
+          "content": "Learn how to use the ClickUp API to list and manage custom roles with clear steps, request examples, and best practices for workspaces."
+        },
+        {
+          "id": "E12",
+          "source": "https://en.wikipedia.org/wiki/ClickUp",
+          "title": "ClickUp - Wikipedia",
+          "content": "ClickUp provides a suite for productivity and collaboration tools within a single platform. The software supports task and project management through customizable workflows, statuses, and multiple …"
+        },
+        {
+          "id": "E13",
+          "source": "",
+          "title": "Intro to the integration with Slack – ClickUp Help",
+          "content": "We also integrate with... View article ... With Chat, you'll never have to waste time switching to other tools again.Communicate with your team using Channels or direct messages, c... View article ... Sync, schedule, and join Google Calendar events from ClickUp , use Google Calendar tools with Brain AI, get link previews for calendar eve... View article ... Ensure that context from Slack ... ClickUp can connect with over 1,000 tools for free! Tools like Slack , GitHub, Google Calendar, Zooom, Zendesk, and so many more! ... You can use our ClickUp Time Tracking feature or one of our time tracking integrations , such as Harvest, Everhour, Toggl, and more. Preview and search your Notion pages and databases from ClickUp !What you'll need The Notion integration is available on every ClickUp ... ... Consolidate your work in ClickUp . Search SharePoint folders, documents , sites, pages, and drives.What you'll need The SharePoint integ..."
+        },
+        {
           "id": "E14",
-          "source": "https://www.notion.com/connections/clickup",
-          "title": "ClickUp - notion.com",
-          "content": "ClickUp is a collaboration and project management tool that brings teams, tasks, and tools together. Notion ’s link preview integration with ClickUp allows you to bring ClickUp tasks and view the latest updates directly in Notion ."
+          "source": "https://clickup.com/",
+          "title": "ClickUp ™ | Maximize productivity • Software, AI, and humans converge",
+          "content": "Brain² keeps track of how you like to work, and gets smarter every time you use ClickUp. GPT, Claude Opus, Gemini, and more. Every model runs with full knowledge of your work. The more your team uses …"
         },
         {
           "id": "E15",
-          "source": "https://github.com/info812/notion-and-clickup/blob/main/README.md",
-          "title": "notion-and-clickup/README.md at main · info812 ... - GitHub",
-          "content": "Notion and ClickUp integration workspace. Contribute to info812/ notion -and- clickup development by creating an account on GitHub."
+          "source": "https://clickup.com/download",
+          "title": "Download ClickUp ™ for Mac, Windows, iOS & Android",
+          "content": "Download ClickUp on any device and access your work from anywhere. Use ClickUp on mobile, desktop, or add as a Chrome extension or email add-on."
         },
         {
           "id": "E16",
-          "source": "https://developer.clickup.com/",
+          "source": "https://clickup.app.link/v4vtkbtqHib",
           "title": "ClickUp",
-          "content": "Develop innovative solutions with the ClickUp API. Build integrations and apps with our Public API.Browse our Public API specification. MCP. Use ClickUp right from your AI assistant. Webhooks. Trigger workflows from ClickUp events. OAuth. Let people sign into their ClickUp account."
+          "content": "Built for teams of all sizes and industries, ClickUp is a powerful productivity platform that helps teams manage tasks, workflows, databases, wikis, projects, and more — all in one place!"
         },
         {
           "id": "E17",
-          "source": "https://pipedream.com/apps/notion/integrations/clickup/get-task-comments-with-clickup-api-on-new-or-updated-page-in-database-by-timestamp-from-notion-api-int_OqsqDgWY",
-          "title": "Get Task Comments with ClickUp API on New or... - Pipedream",
-          "content": "Setup the Notion API trigger to run a workflow which integrates with the ClickUp API. Pipedream's integration platform allows you to integrate Notion and ClickUp remarkably fast. Free for developers ."
+          "source": "https://www.notion.com/help/slack",
+          "title": "Integrate Slack – Notion Help Center",
+          "content": "Notion 's integration with Slack enables seamless communication between the two platforms. You can send Slack messages to Notion databases and receive Slack notifications for Notion activities. Read on to learn about the different features of the integration and how you can set them up."
         },
         {
           "id": "E18",
-          "source": "https://www.youtube.com/watch?v=U1qumwESWrQ",
-          "title": "How to Make an Eisenhower Matrix in 15 Mins in Monday.com, Notion ...",
-          "content": "Unlock Ultimate Productivity with the Eisenhower Matrix! | Notion vs. ClickUp vs. Monday.com vs. Smartsheet Ever feel like your to-do list is spiraling ..."
+          "source": "https://www.notion.com/help/guides/unleashing-productivity-with-notions-slack-integration",
+          "title": "Unleashing productivity with Notion's Slack integration",
+          "content": "Make your team more efficient by connecting Slack with Notion . This integration helps you easily gather information, get instant updates, and simplify your workflow—all in one place. Here's everything you need to know to connect these powerful tools."
         },
         {
           "id": "E19",
-          "source": "https://www.guvi.in/blog/clickup-guide-for-software-development-projects/",
-          "title": "How to Use ClickUp : Best Guide for Software Development Projects",
-          "content": "ClickUp ’s official guide on ClickUp for software development explains how teams can use hierarchy, Custom Fields, views, Docs, automations, integrations, and dashboards for engineering workflows."
+          "source": "https://slack.com/marketplace/A049JV0H0KC-notion",
+          "title": "Notion & Slack Integration | Slack Marketplace",
+          "content": "Notion Notion gives you one place to see your work and its context. Project docs, meeting notes, and roadmaps live side by side in Notion , so teams know the “why” behind a project. Use Notion 's integration for Slack to preserve knowledge created in Slack and stay updated on work progress in Notion ."
         },
         {
           "id": "E20",
-          "source": "https://lovable.dev/",
-          "title": "AI App Builder | Vibe Code Apps & Websites with AI, Fast",
-          "content": "Build apps, websites , and digital products faster using Lovable's AI-powered platform, no deep coding skills required.Build something Lovable. Create apps and websites by chatting with AI."
+          "source": "https://sotion.so/blog/notion-slack-integration",
+          "title": "Master Notion Slack Integration for Your Workflow",
+          "content": "Apr 5, 2026 · Discover how to master the Notion Slack integration . Our guide covers native tools, Zapier, and APIs to connect your workflows and boost productivity."
+        },
+        {
+          "id": "E21",
+          "source": "https://www.suptask.com/blog/connect-slack-and-notion",
+          "title": "How To Connect Slack and Notion - Complete Integration Guide",
+          "content": "The Core Value: This integration eliminates the productivity drain of context switching (workers spend 40% of their time looking for information). Slack becomes the communication layer, Notion becomes the knowledge layer, and the integration keeps them in sync."
+        },
+        {
+          "id": "E22",
+          "source": "https://www.notion.com/help/slack",
+          "title": "fetched page",
+          "content": "Integrate Slack – Notion Help Center Play Uh-oh! It looks like your ad blocker is preventing the video from playing. Please watch it on YouTube Notion's integration with Slack enables seamless communication between the two platforms. You can send Slack messages to Notion databases and receive Slack notifications for Notion activities. Read on to learn about the different features of the integration and how you can set them up. Set up Slack integration To receive Slack notifications about things that happen in Notion: Go to Settings in your sidebar → Notifications . Find Slack notifications . Click Add new account and go through the authentication flow. To set up Slack notifications as part of a database automation: Select ••• at the top of a database. Select Automations and Add trigger . Then choose Page added or Property edited → Send Slack notification to... Select a Slack channel. If you haven't already, you'll be asked to asked to connect your Slack account. Notion AI can find answers to your questions based on information from your Slack conversations. Learn more about this feature here → Send a Slack message to a Notion database When Slack messages turn into an action item or a new idea, send them right to a Notion database so they don't get lost. Here's how: Enter the command /notion create into Slack, or click ⋮ next to any Slack message → Send to Notion . You may need to select More message shortcuts... to find this option. Search for the database where you'd like this new page to live or paste the link to the database. Then give the page a title. Select Add property to add more information to your new page based on the database’s existing properties. Check the box next to Confirm page creation publicly if you’d like others in your Slack discussion to be notified of the new database item you’ve created. Click Save . Note: The /notion create command only works at the Slack channel level, and not inside of Slack threads. File a Notion task in Slack To create a Notion task directly from Slack: Enter the command /notion task into Slack, or click ⋮ next to any Slack message → Create task in Notion . You may need to select More message shortcuts... to find this option. Search for the project where you'd like this new task to live or paste the link to the Notion project. You can give the task a name, an assignee, status, due date, and description. Check the box next to Confirm page creation publicly if you’d like others in your Slack discussion to be not"
+        },
+        {
+          "id": "E23",
+          "source": "https://clickup.com/",
+          "title": "clickup .com",
+          "content": "ClickUp ’s official website."
+        },
+        {
+          "id": "E24",
+          "source": "https://consultevo.com/clickup-public-doc-api-guide/",
+          "title": "Use ClickUp Public Doc API",
+          "content": "The ClickUp Public Doc API endpoint lets you securely retrieve the content of a public document using a simple HTTP request, making it easy to integrate ClickUp documentation into your own apps, sites, or internal tools."
+        },
+        {
+          "id": "E25",
+          "source": "https://api-docs.deepseek.com/",
+          "title": "Your First API Call | DeepSeek API Docs",
+          "content": "Your First API Call. The DeepSeek API uses an API format compatible with OpenAI/Anthropic. By modifying the configuration, you can use the OpenAI/Anthropic SDK or softwares compatible with the OpenAI/Anthropic API to access the DeepSeek API ."
+        },
+        {
+          "id": "E26",
+          "source": "https://github.com/lpg2709/clickup_api",
+          "title": "GitHub - lpg2709/ clickup _ api : No oficial module for ClickUp API",
+          "content": "const clickup _ api = require(\" clickup _ api \"); Initialize a new object. This object go use the API Token to do all calls. const Clickup = new clickup _ api (\"access_token\"); After that you can call all method of the Clickup class. To create a task"
+        },
+        {
+          "id": "E27",
+          "source": "https://latenode.com/integrations/clickup",
+          "title": "ClickUp Integrations: Automate ClickUp Workflows via... | Latenode",
+          "content": "Automate ClickUp workflows — no code needed. Official website. Seamlessly integrate ClickUp with your favorite business tools using Latenode. Automate task management, enhance collaboration, and optimize workflows without any coding."
         }
       ],
       "prices": [],
@@ -229,80 +278,87 @@
         "validate: products=['Notion', 'ClickUp'] criteria=['public_api_access', 'official_slack_integration', 'configurable_role_based_permissions'] pricing=False",
         "plan#1: web_search(Notion ClickUp public API slack integration role based permi)",
         "act: search 'Notion ClickUp public API slack integrat' -> 5 results",
-        "plan#2: web_search(Notion official documentation public API slack integration r)",
-        "act: search 'Notion official documentation public API' -> 5 results",
-        "plan#3: fetch_url(https://developers.notion.com/docs)",
-        "act: fetch retry 1 for https://developers.notion.com/docs",
-        "act: fetch retry 2 for https://developers.notion.com/docs",
-        "act: fetch https://developers.notion.com/docs -> FAILED after retries, needs fallback",
-        "plan#4: web_search(Notion ClickUp official developer documentation)",
-        "act: search 'Notion ClickUp official developer docume' -> 5 results",
-        "plan#5: fetch_url(https://developer.clickup.com/docs/Getting+Started)",
-        "act: fetch retry 1 for https://developer.clickup.com/docs/Getti",
-        "act: fetch retry 2 for https://developer.clickup.com/docs/Getti",
-        "act: fetch https://developer.clickup.com/docs/Getti -> FAILED after retries, needs fallback",
-        "plan#6: web_search(Notion ClickUp developer documentation official site)",
-        "act: search 'Notion ClickUp developer documentation o' -> 5 results",
-        "plan#7: fetch_url(https://developers.notion.com/docs)",
-        "act: duplicate action skipped (fetch_url)",
-        "plan#8: fetch_url(https://developers.notion.com/docs)",
-        "act: duplicate action skipped (fetch_url)",
-        "plan#9: fetch_url(https://developer.clickup.com/)",
+        "plan#2: fetch_url(https://developer.clickup.com/)",
+        "act: fetch https://developer.clickup.com/ -> ok (E6)",
+        "plan#3: web_search(ClickUp official documentation public API slack integration )",
+        "act: search 'ClickUp official documentation public AP' -> 5 results",
+        "plan#4: fetch_url(https://help.clickup.com/hc/en-us/articles/6304922742295-Int)",
+        "act: fetch retry 1 for https://help.clickup.com/hc/en-us/articl",
+        "act: fetch retry 2 for https://help.clickup.com/hc/en-us/articl",
+        "act: fetch https://help.clickup.com/hc/en-us/articl -> FAILED after retries, needs fallback",
+        "plan#5: web_search(ClickUp official slack integration documentation)",
+        "act: search 'ClickUp official slack integration docum' -> 5 results",
+        "plan#6: web_search(Notion official slack integration documentation)",
+        "act: search 'Notion official slack integration docume' -> 5 results",
+        "plan#7: fetch_url(https://www.notion.com/help/slack)",
+        "act: fetch https://www.notion.com/help/slack -> ok (E22)",
+        "plan#8: web_search(ClickUp official public API documentation)",
+        "act: search 'ClickUp official public API documentatio' -> 5 results",
+        "plan#9: finish()",
         "compare: 6 cells produced",
         "price: not requested, skipped",
         "draft: answer written",
-        "verify: gate1 rejected 0, gate2 rejected 0, of 1 asserted",
+        "verify: gate1 rejected 1, gate2 rejected 0, of 4 asserted",
+        "revise: downgraded 1 unsupported cell(s) to unverified",
+        "verify: gate1 rejected 0, gate2 rejected 0, of 3 asserted",
         "finalize: answer rendered from verified cells"
       ],
       "stats": {
-        "llm_calls": 12,
+        "llm_calls": 13,
         "tool_calls": 10,
         "steps": 9,
-        "retries": 4,
-        "revisions": 0,
-        "seconds": 25.8
+        "retries": 2,
+        "revisions": 1,
+        "seconds": 34.1
       }
     },
     {
       "case_id": 2,
       "track": "behavioral",
       "status": "active",
-      "outcome": "FAIL",
+      "outcome": "PASS",
       "input": "Compare Miro and Mural on real-time collaboration and official Slack integration using official documentation.",
       "assertions": {
-        "failure_detected": false,
-        "retry_count_at_least": false,
+        "failure_detected": true,
+        "retry_count_at_least": true,
         "different_query_or_source_used": true,
         "no_fabricated_claims": true,
         "run_terminates_within_step_limit": true
       },
       "metrics": null,
       "pricing": null,
-      "injection_events": [],
-      "answer": "Capability comparison:\n\n- Miro / real time collaboration: unverified\n- Mural / real time collaboration: unverified\n- Miro / official slack integration: verified_present [E4]\n- Mural / official slack integration: unverified\n\nRecommendation:\nBased only on the verified capabilities above, Miro has the strongest documented coverage. Confirm every unverified item that matters to your team before deciding.",
+      "injection_events": [
+        {
+          "tool": "fetch_url",
+          "target": "https://www.g2.com/products/miro/reviews",
+          "outcome": "injected_timeout",
+          "attempt": 1
+        }
+      ],
+      "answer": "Capability comparison:\n\n- Miro / real time collaboration: verified_present [E4]\n- Mural / real time collaboration: verified_present [E17]\n- Miro / official slack integration: unverified\n- Mural / official slack integration: unverified\n\nRecommendation:\nThe verified evidence does not establish a unique winner. Confirm the unverified items that matter to your team before deciding.",
       "final": {
         "type": "answer",
         "cells": [
           {
             "product": "Miro",
             "criterion": "real_time_collaboration",
-            "label": "unverified",
-            "citation_id": "",
-            "quote": ""
+            "label": "verified_present",
+            "citation_id": "E4",
+            "quote": "Real - time collaboration is where Miro really shines."
           },
           {
             "product": "Mural",
             "criterion": "real_time_collaboration",
-            "label": "unverified",
-            "citation_id": "",
-            "quote": ""
+            "label": "verified_present",
+            "citation_id": "E17",
+            "quote": "MURAL focuses on real time visual collaboration with digital whiteboards, structured templates, and collaborative facilitation for workshops and planning."
           },
           {
             "product": "Miro",
             "criterion": "official_slack_integration",
-            "label": "verified_present",
-            "citation_id": "E4",
-            "quote": "Sign in using your Office 365, Slack, Google or Facebook account."
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
           },
           {
             "product": "Mural",
@@ -314,15 +370,27 @@
         ],
         "cost": {},
         "sources": [
-          "https://en.wikipedia.org/wiki/Joan_Miró",
-          "https://en.wikipedia.org/wiki/Miro_(collaboration_platform)",
-          "https://miro-landing.vercel.app/",
+          "https://api.slack.com/automation/collaborate",
+          "https://app.mural.co/signin",
+          "https://deepwiki.com/miroslavpejic85/mirotalk/6.3-slack-integration",
+          "https://help.miro.com/hc/en-us/articles/360017572494-Slack",
+          "https://livedemo.ai/tutorials/how-to-integrate-slack-with-miro/",
           "https://miro.com/",
-          "https://miro.com/login/"
+          "https://miro.com/integrations/slack/",
+          "https://muralapp.io/?ref=producthunt",
+          "https://platformdex.com/miro",
+          "https://remoteworkwise.com/miro-vs-mural/",
+          "https://slack.com/",
+          "https://slack.com/marketplace/A8VK125AS-miro",
+          "https://toolfinder.com/alternatives/miro",
+          "https://www.g2.com/products/miro/reviews",
+          "https://www.mural.co/",
+          "https://www.mural.co/product",
+          "https://www.muralsyourway.com/",
+          "https://zipdo.co/best/real-time-collaboration-software/"
         ],
         "unverified": [
-          "Miro / real_time_collaboration",
-          "Mural / real_time_collaboration",
+          "Miro / official_slack_integration",
           "Mural / official_slack_integration"
         ],
         "grounding_rate": 1.0
@@ -330,69 +398,153 @@
       "evidence": [
         {
           "id": "E1",
-          "source": "https://en.wikipedia.org/wiki/Miro_(collaboration_platform)",
-          "title": "Miro (collaboration platform) - Wikipedia",
-          "content": "Miro is a collaborative online platform designed to support teams in planning and execution across different locations and time zones. It is used for a variety of purposes, including brainstorming, agile …"
+          "source": "https://miro.com/",
+          "title": "AI Innovation Workspace | Miro",
+          "content": "Technical Design & Documentation . Miro AI. 3.6x. faster time to market. 50%. shorter planning process. 2x. faster time to market. Check this out. 100M+. people collaborating on Miro . 250+. apps and integrations . 6,000+. templates."
         },
         {
           "id": "E2",
-          "source": "https://en.wikipedia.org/wiki/Joan_Miró",
-          "title": "Joan Miró - Wikipedia",
-          "content": "\"Joan Miro (1893–1983) | Painting-Poem (\"le corps de ma brune puisque je l'aime comme ma chatte habillée en vert salade comme de la grêle c'est pareil\") | Impressionist & Modern Art Auction | …"
+          "source": "https://slack.com/",
+          "title": "Slack | AI Work Platform & Productivity Tools",
+          "content": "Boost productivity and save time with Slack — the AI work platform for managing projects, automating workflows, and connecting teams securely. Start working smarter today. Slack Connect lets you chat with clients and vendors in real - time , right from Slack . Email could never."
         },
         {
           "id": "E3",
-          "source": "https://miro.com/",
-          "title": "AI Innovation Workspace | Miro",
-          "content": "“Being able to bring everyone together to plan in Miro ultimately means that the most impactful initiatives will happen at the right time – and customers will get the functionality they want.”"
+          "source": "https://zipdo.co/best/real-time-collaboration-software/",
+          "title": "Real Time Collaboration Software: Best Picks (2026)",
+          "content": "Slack brings real - time messaging, channels, and file sharing into one threaded workflow that teams use daily. Its searchable message history, practical integrations , and shared files reduce repeat questions and help work move forward."
         },
         {
           "id": "E4",
-          "source": "https://miro.com/login/",
-          "title": "Sign in | Miro | The Visual Workspace for Innovation",
-          "content": "Sign in using your Office 365, Slack, Google or Facebook account."
+          "source": "https://www.g2.com/products/miro/reviews",
+          "title": "Miro Reviews 2026: Details, Pricing, & Features | G2",
+          "content": "Real - time collaboration is where Miro really shines. Miro integrates well with tools such as Jira, Slack , Microsoft 365, and Google Workspace, which makes it easier to connect visual collaboration to existing workflows instead of constantly switching between applications."
         },
         {
           "id": "E5",
-          "source": "https://miro-landing.vercel.app/",
-          "title": "Miro | Free Online Collaborative Whiteboard Platform",
-          "content": "## Build Setup The online collaborative whiteboard platform to bring teams together, anytime, anywhere."
+          "source": "https://toolfinder.com/alternatives/miro",
+          "title": "Best Miro Alternatives in 2026 | Productivity Tools",
+          "content": "Both offer strong real - time collaboration , facilitation features (voting, timers , focus modes), and video integration . Lucidspark performs better on large boards. MURAL has more advanced facilitation tools for professional moderators."
         },
         {
           "id": "E6",
-          "source": "https://miro.com/",
-          "title": "fetched page",
-          "content": "AI Innovation Workspace | Miro Andrey See collaborative AI in action â straight from the Canvas 26 keynote. Watch now Jeff The collaboration layer your AI tools are missing. Where teams and their agents think, plan and build together No credit card needed. Research Roadmaps Diagrams Workshops Turn research into a shared direction Pull outputs from Claude, NotebookLM, or any research tool into one canvas. Your team reviews the findings together, surfaces what matters, and commits to a direction â then flow the insights back out to your roadmap, specs, or next AI prompt. Explore research Research Roadmaps Diagrams Workshops Turn research into a shared direction Pull outputs from Claude, NotebookLM, or any research tool into one canvas. Your team reviews the findings together, surfaces what matters, and commits to a direction â then flow the insights back out to your roadmap, specs, or next AI prompt. Explore research Research Roadmaps Diagrams Workshops Turn research into a shared direction Pull outputs from Claude, NotebookLM, or any research tool into one canvas. Your team reviews the findings together, surfaces what matters, and commits to a direction â then flow the insights back out to your roadmap, specs, or next AI prompt. Explore research The only thing more important than moving fast is moving the needle See how over 250,000 companies are getting great done in Miro Aida Miro AI 3.6x faster time to market 50% shorter planning process 2x faster time to market Check this out 100M+ people collaborating on Miro 250+ apps and integrations 6,000+ templates âBeing able to bring everyone together to plan in Miro ultimately means that the most impactful initiatives will happen at the right time â and customers will get the functionality they want.â Lucy Starling Product Operations Lead at ASOS Read Customer Study Jess Drew Letâs go with this fit for our summer collection The only thing more important than moving fast is moving the needle See how over 250,000 companies are getting great done in Miro 3.6x faster time to market 50% shorter planning process 2x faster time to market 100M+ people collaborating on Miro 250+ apps and integrations 6,000+ templates âBeing able to bring everyone together to plan in Miro ultimately means that the most impactful initiatives will happen at the right time â and customers will get the functionality they want.â Lucy Starling Product Operations Lead at ASOS Read Customer Study Jess Drew Letâs go with th"
+          "source": "https://miro.com/integrations/slack/",
+          "title": "Slack Integration | Miro",
+          "content": "Develop your own Miro apps Get all the tools, APIs, libraries, and documentation to help you develop Miro apps at the speed of connection."
         },
         {
           "id": "E7",
-          "source": "https://en.wikipedia.org/wiki/Miro_(collaboration_platform)",
-          "title": "Miro (collaboration platform) - Wikipedia",
-          "content": "Miro is a collaborative online platform designed to support teams in planning and execution across different locations and time zones. It …"
+          "source": "https://help.miro.com/hc/en-us/articles/360017572494-Slack",
+          "title": "Slack - Miro Help Center Miro & Slack Integration | Slack Marketplace Slack Integration | miroslavpejic85/mirotalk | DeepWiki How to Integrate Slack with Miro - livedemo.ai How to connect Miro and Slack - App Integrations - Stackreaction Miro Slack Integration (2026): Setup Guide & Use Cases ...",
+          "content": "Slack App integration is set up by a user for their own profile. To enable the integration , open your Miro Profile settings. Getting to Profile settings from Miro dashboard Switch to the Integrations tab, find Miro Feed ( Slack App) and click Connect: Connecting Slack App Another option is to enable it right in the Notifications tab: Enabling Slack ... See full list on help. miro .com Customize the feed that you receive by choosing the events you'd like to be notified about. You can keep track of the following events: 1. invitees sign up 2. someone requests access to a team or a board 3. you are invited to a project 4. a board is shared with you 5. there's a new comment on your board or a reply to your comment on a board 6. some... See full list on help. miro .com When someone requests access to your board you can grant in right in Slack . Choose the option and click the button: Granting access to a board in the Slack channel See full list on help. miro .com The latest version of Miro Slack app unfurls links to Miro boards by adding the board names, descriptions, and board thumbnails. Board name, description, and thumbnail in Slack channel Reinstall your Slack integration to get access to the feature: go to Miro Profile settings > Integrations and click Log out next to Miro Feed ( Slack App). Then click... See full list on help. miro .com When posting a board link in Slack you will see a notification showing the users that don't have access to the board. You can easily invite them to the board right via Slack . Feel free to make the board publicso that anyone with the link can view/comment it. Sharing a Miro board from within Slack See full list on help. miro .com You can use the Miro shortcut to create a board from within Slack . Search Miro and choose Create a board. Creating a board from Slack Enter a title for the board, select a Miro team, and add a short message to send along with the link to the newly created board within Slack . Setting parameters for a new board in Slack Once the board is created, the... See full list on help. miro .com To disable the integration , go to theProfile settings > Integrations and click Log out: Disabling Miro Feed To remove the app from Slack completely, open Miro channel settings in Slack , click Configuration. Configuration of the Miro App for Slack You'll be redirected to the Miro app Settings page. Scroll down, find your name in the list of authoriz... See full list on help. miro .com 1. If a user adds Miro to Slack , will Miro be able to read their Slack channels? - No, Miro will just view basic information about public channels in the workspace. It means that Miro will be able to read the list of channel names and won't be able to read the channel messages. 2. I am getting 'Something went wrong' message when trying to connect t... See full list on help. miro .com Miro and Slack work to simplify your work and maximize productivity, so you can focus on the things that matter. With the Miro app for Slack , you can track all of your Miro notifications and activity anytime without interrupting your workflow. Apr 20, 2026 · Purpose This document describes the Slack integration feature in MiroTalk P2P, which enables users to create meeting rooms directly from Slack using slash commands. The integration provides a secure webhook endpoint that verifies Slack requests and generates instant meeting room URLs. Sep 5, 2025 · Guide Click the '+Add apps' button. Search for ' Miro ' and click 'Add'. Click 'Add to Slack '. Click 'Allow' to connect your Miro account to Slack . That's it! You have granted the necessary permissions for Miro to access your Slack workspace. Integrating Slack with Miro enhances your collaborative efforts by allowing you to manage and share Miro boards directly within Slack . How to connect Miro and Slack Miro and Slack integration is available through workflow automation tools – Make.com, Zapier, Pabbly Connect or 3 more. With the combination of 12 Miro triggers and 197 Slack actions, you can create thousands of integration workflows to automate your work. Miro and Slack are both used by product teams — integrating them removes duplicated status updates and keeps work visible across both tools. Miro lists it as a native integration , so setup takes minutes rather than Zapier workarounds."
         },
         {
           "id": "E8",
-          "source": "https://en.wikipedia.org/wiki/Joan_Miró",
-          "title": "Joan Miró - Wikipedia",
-          "content": "\"Joan Miro (1893–1983) | Painting-Poem (\"le corps de ma brune puisque je l'aime comme ma chatte habillée en vert salade comme de la …"
+          "source": "https://slack.com/marketplace/A8VK125AS-miro",
+          "title": "Miro & Slack Integration | Slack Marketplace",
+          "content": "Miro and Slack work to simplify your work and maximize productivity, so you can focus on the things that matter. With the Miro app for Slack , you can track all of your Miro notifications and activity anytime without interrupting your workflow."
         },
         {
           "id": "E9",
-          "source": "https://miro.com/",
-          "title": "AI Innovation Workspace | Miro",
-          "content": "“Being able to bring everyone together to plan in Miro ultimately means that the most impactful initiatives will happen at the right time – …"
+          "source": "https://deepwiki.com/miroslavpejic85/mirotalk/6.3-slack-integration",
+          "title": "Slack Integration | miroslavpejic85/mirotalk | DeepWiki",
+          "content": "Apr 20, 2026 · Purpose This document describes the Slack integration feature in MiroTalk P2P, which enables users to create meeting rooms directly from Slack using slash commands. The integration provides a secure webhook endpoint that verifies Slack requests and generates instant meeting room URLs."
         },
         {
           "id": "E10",
-          "source": "https://miro.com/login/",
-          "title": "Sign in | Miro | The Visual Workspace for Innovation",
-          "content": "Sign in using your Office 365, Slack, Google or Facebook account."
+          "source": "https://livedemo.ai/tutorials/how-to-integrate-slack-with-miro/",
+          "title": "How to Integrate Slack with Miro - livedemo.ai",
+          "content": "Sep 5, 2025 · Guide Click the '+Add apps' button. Search for ' Miro ' and click 'Add'. Click 'Add to Slack '. Click 'Allow' to connect your Miro account to Slack . That's it! You have granted the necessary permissions for Miro to access your Slack workspace. Integrating Slack with Miro enhances your collaborative efforts by allowing you to manage and share Miro boards directly within Slack ."
         },
         {
           "id": "E11",
-          "source": "https://miro-landing.vercel.app/",
-          "title": "Miro | Free Online Collaborative Whiteboard Platform",
-          "content": "## Build Setup The online collaborative whiteboard platform to bring teams together, anytime, anywhere."
+          "source": "https://www.mural.co/",
+          "title": "AI-powered visual workspace for team collaboration | Mural",
+          "content": "Boost team collaboration and innovation with Mural, the AI-powered visual workspace. Plan, strategize, and execute projects seamlessly …"
+        },
+        {
+          "id": "E12",
+          "source": "https://app.mural.co/signin",
+          "title": "Mural",
+          "content": "Mural ... Mural"
+        },
+        {
+          "id": "E13",
+          "source": "https://www.mural.co/product",
+          "title": "The Visual Work Platform Designed to Improve Teamwork | Mural",
+          "content": "Mural is more than just a whiteboard. It’s a better way to work. We combine an intuitive, dynamic visual work platform with best-in-class …"
+        },
+        {
+          "id": "E14",
+          "source": "https://muralapp.io/?ref=producthunt",
+          "title": "Mural - the easiest way to build a professional portfolio & share your ...",
+          "content": "Mural is the easiest way to share the right work with the right people, and at the right time. Used actively by leading consultants, …"
+        },
+        {
+          "id": "E15",
+          "source": "https://www.muralsyourway.com/",
+          "title": "Wall Murals & Custom Wallpaper Murals - Murals Your Way",
+          "content": "Take your walls from boring to bold with custom printed wall murals and wallpaper. Choose from stunning photos, bold patterns or …"
+        },
+        {
+          "id": "E16",
+          "source": "https://www.mural.co/",
+          "title": "AI-powered visual workspace for team collaboration | Mural",
+          "content": "Intelligent integrations . Real - time collaborative workspaces. Streamlined workflows & templates. AI for accelerated insights & decisions. Intelligent integrations ."
+        },
+        {
+          "id": "E17",
+          "source": "https://zipdo.co/best/real-time-collaboration-software/",
+          "title": "Real Time Collaboration Software: Best Picks (2026)",
+          "content": "MURAL focuses on real time visual collaboration with digital whiteboards, structured templates, and collaborative facilitation for workshops and planning. Teams can run activities with sticky notes, diagrams, voting, and timed exercises while multiple people edit simultaneously."
+        },
+        {
+          "id": "E18",
+          "source": "https://platformdex.com/miro",
+          "title": "Miro — Online Whiteboard and Visual Collaboration Platform",
+          "content": "Real - time Collaboration : Synchronized editing, co-presence indicators, and communication tools for immediate group interaction.For detailed and up-to-date information, refer to the official Miro pricing page. Common integrations ."
+        },
+        {
+          "id": "E19",
+          "source": "https://api.slack.com/automation/collaborate",
+          "title": "Team collaboration | Slack",
+          "content": "Use the slack run command while working to see your changes in real - time within your local environment. For information about developing locally, refer to local development."
+        },
+        {
+          "id": "E20",
+          "source": "https://remoteworkwise.com/miro-vs-mural/",
+          "title": "Miro vs Mural - Remote Work Wise",
+          "content": "Integration Capabilities: Real - Time Collaboration : Versatile Use Cases Integration Capabilities: Seamlessly integrates with popular tools like Slack , Jira, and Google Drive. Enhances workflow by connecting with existing software. Automates tasks and reduces manual effort."
+        },
+        {
+          "id": "E21",
+          "source": "https://www.mural.co/",
+          "title": "AI-powered visual workspace for team collaboration | Mural",
+          "content": "Boost team collaboration and innovation with Mural, the AI-powered visual workspace. Plan, strategize, and execute projects seamlessly on one intuitive tool."
+        },
+        {
+          "id": "E22",
+          "source": "https://app.mural.co/signin",
+          "title": "Mural",
+          "content": "Mural ... Mural"
+        },
+        {
+          "id": "E23",
+          "source": "https://www.mural.co/product",
+          "title": "The Visual Work Platform Designed to Improve Teamwork | Mural",
+          "content": "Mural is more than just a whiteboard. It’s a better way to work. We combine an intuitive, dynamic visual work platform with best-in-class security and smart teamwork practices to help companies and …"
+        },
+        {
+          "id": "E24",
+          "source": "https://muralapp.io/?ref=producthunt",
+          "title": "Mural - the easiest way to build a professional portfolio & share your ...",
+          "content": "Mural is the easiest way to share the right work with the right people, and at the right time. Used actively by leading consultants, marketers, product managers, investors, and academics."
+        },
+        {
+          "id": "E25",
+          "source": "https://www.muralsyourway.com/",
+          "title": "Wall Murals & Custom Wallpaper Murals - Murals Your Way",
+          "content": "Take your walls from boring to bold with custom printed wall murals and wallpaper. Choose from stunning photos, bold patterns or beautiful artwork. Print to fit any size wall. Satisfaction guaranteed. …"
         }
       ],
       "prices": [],
@@ -405,28 +557,40 @@
         "validate: products=['Miro', 'Mural'] criteria=['real_time_collaboration', 'official_slack_integration'] pricing=False",
         "plan#1: web_search(Miro real time collaboration Slack integration official docu)",
         "act: search 'Miro real time collaboration Slack integ' -> 5 results",
-        "plan#2: fetch_url(https://miro.com/)",
-        "act: fetch https://miro.com/ -> ok (E6)",
-        "plan#3: web_search(Miro real time collaboration Slack integration official help)",
-        "act: search 'Miro real time collaboration Slack integ' -> 5 results",
-        "plan#4: web_search(Miro real time collaboration Slack integration official help)",
+        "plan#2: fetch_url(https://www.g2.com/products/miro/reviews)",
+        "act: fetch retry 1 for https://www.g2.com/products/miro/reviews",
+        "act: fetch retry 2 for https://www.g2.com/products/miro/reviews",
+        "act: fetch https://www.g2.com/products/miro/reviews -> FAILED after retries, needs fallback",
+        "plan#3: web_search(Miro official slack integration documentation)",
+        "act: search 'Miro official slack integration document' -> 5 results",
+        "plan#4: web_search(MURAL official slack integration documentation)",
+        "act: search 'MURAL official slack integration documen' -> 5 results",
+        "plan#5: web_search(MURAL real-time collaboration Slack integration official doc)",
+        "act: search 'MURAL real-time collaboration Slack inte' -> 5 results",
+        "plan#6: web_search(MURAL real-time collaboration Slack integration official doc)",
         "act: duplicate action skipped (web_search)",
-        "plan#5: web_search(Miro real time collaboration Slack integration official docu)",
+        "plan#7: web_search(MURAL real-time collaboration Slack integration official sit)",
+        "act: search 'MURAL real-time collaboration Slack inte' -> 5 results",
+        "plan#8: web_search(MURAL real-time collaboration Slack integration official sit)",
         "act: duplicate action skipped (web_search)",
-        "plan#6: web_search(Miro real time collaboration Slack integration official docu)",
+        "plan#9: web_search(MURAL real-time collaboration Slack integration official sit)",
+        "act: duplicate action skipped (web_search)",
+        "plan#10: web_search(MURAL real-time collaboration Slack integration official doc)",
         "compare: 4 cells produced",
         "price: not requested, skipped",
         "draft: answer written",
-        "verify: gate1 rejected 0, gate2 rejected 0, of 1 asserted",
+        "verify: gate1 rejected 0, gate2 rejected 1, of 3 asserted",
+        "revise: downgraded 1 unsupported cell(s) to unverified",
+        "verify: gate1 rejected 0, gate2 rejected 0, of 2 asserted",
         "finalize: answer rendered from verified cells"
       ],
       "stats": {
-        "llm_calls": 9,
-        "tool_calls": 3,
-        "steps": 6,
-        "retries": 0,
-        "revisions": 0,
-        "seconds": 12.6
+        "llm_calls": 14,
+        "tool_calls": 8,
+        "steps": 10,
+        "retries": 2,
+        "revisions": 1,
+        "seconds": 27.3
       }
     },
     {
@@ -438,7 +602,7 @@
       "assertions": {
         "price_has_supporting_quote": true,
         "billing_frequency_identified": true,
-        "plan_name_identified": false,
+        "plan_name_identified": true,
         "calculation_matches_cited_price": false,
         "calculator_tool_used": true,
         "unverified_if_price_cannot_be_confirmed": true
@@ -449,121 +613,150 @@
         "pricing_cost_matches": 1
       },
       "injection_events": [],
-      "answer": "Capability comparison:\n\n- Notion / collaboration capabilities: verified_present [E1]\n- ClickUp / collaboration capabilities: verified_present [E5]\n- Notion / annual cost for 20 users: unverified\n- ClickUp / annual cost for 20 users: unverified\n\nCost:\n- Notion (Paid Plans): $8.0/user/mo x 20 x 12 = $1920/yr [E2]\n- ClickUp: $7.0/user/mo x 20 x 12 = $1680/yr [E2]\n\nRecommendation:\nThe verified evidence does not establish a unique winner. Confirm the unverified items that matter to your team before deciding.",
+      "answer": "Capability comparison:\n\n- Notion / collaboration capabilities: unverified\n- ClickUp / collaboration capabilities: unverified\n- Notion / annual cost for 20 users: verified_present [E6]\n- ClickUp / annual cost for 20 users: verified_present [E7]\n\nCost:\n- Notion (Plus): $10.0/user/mo x 20 x 12 = $2400/yr [E6]\n- Notion (Business): $20.0/user/mo x 20 x 12 = $4800/yr [E7]\n\nRecommendation:\nThe verified evidence does not establish a unique winner. Confirm the unverified items that matter to your team before deciding.",
       "final": {
         "type": "answer",
         "cells": [
           {
             "product": "Notion",
             "criterion": "collaboration_capabilities",
-            "label": "verified_present",
-            "citation_id": "E1",
-            "quote": "Notion has expanded its collaboration capabilities with Notion Mail. This enables users to manage emails directly within their Notion workspace, connect multiple email accounts and create tasks directly from emails, further centralizing team communication."
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
           },
           {
             "product": "ClickUp",
             "criterion": "collaboration_capabilities",
-            "label": "verified_present",
-            "citation_id": "E5",
-            "quote": "ClickUp and Notion both have notable collaboration features such as real-time editing, commenting and task assignment. ClickUp allows mentions, threaded comments and sharing of task lists, enhancing team collaboration and communication."
+            "label": "unverified",
+            "citation_id": "",
+            "quote": ""
           },
           {
             "product": "Notion",
             "criterion": "annual_cost_for_20_users",
-            "label": "unverified",
-            "citation_id": "",
-            "quote": ""
+            "label": "verified_present",
+            "citation_id": "E6",
+            "quote": "The business plan at $ 20 per user includes private team spaces."
           },
           {
             "product": "ClickUp",
             "criterion": "annual_cost_for_20_users",
-            "label": "unverified",
-            "citation_id": "",
-            "quote": ""
+            "label": "verified_present",
+            "citation_id": "E7",
+            "quote": "Business plan : $ 20 per month/ user ."
           }
         ],
         "cost": {
           "lines": [
-            "Notion (Paid Plans): $8.0/user/mo x 20 x 12 = $1920/yr [E2]",
-            "ClickUp: $7.0/user/mo x 20 x 12 = $1680/yr [E2]"
+            "Notion (Plus): $10.0/user/mo x 20 x 12 = $2400/yr [E6]",
+            "Notion (Business): $20.0/user/mo x 20 x 12 = $4800/yr [E7]"
           ],
           "team_size": 20
         },
         "sources": [
-          "https://atherobase.com/compare/clickup-vs-notion",
+          "https://apps.microsoft.com/detail/xpdbvss44r0l9h",
+          "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
+          "https://monday.com/blog/project-management/whats-the-best-notion-alternative-for-your-team/",
+          "https://notion.notion.site/",
+          "https://play.google.com/store/apps/details?id=notion.id&hl=en-US",
+          "https://thebusinessdive.com/notion-vs-clickup",
           "https://www.cloudwards.net/clickup-vs-notion/",
-          "https://www.joinsecret.com/compare/clickup-vs-notion",
-          "https://www.techrepublic.com/article/clickup-vs-notion/",
+          "https://www.fahimai.com/notion-vs-clickup",
+          "https://www.notion.com/",
           "https://www.zenpilot.com/blog/clickup-vs-notion/"
         ],
         "unverified": [
-          "Notion / annual_cost_for_20_users",
-          "ClickUp / annual_cost_for_20_users"
+          "Notion / collaboration_capabilities",
+          "ClickUp / collaboration_capabilities"
         ],
         "grounding_rate": 1.0
       },
       "evidence": [
         {
           "id": "E1",
-          "source": "https://www.cloudwards.net/clickup-vs-notion/",
-          "title": "ClickUp vs Notion in 2026 [Features, Pricing & More Compared]",
-          "content": "Notion has expanded its collaboration capabilities with Notion Mail. This enables users to manage emails directly within their Notion workspace, connect multiple email accounts and create tasks directly from emails, further centralizing team communication."
+          "source": "https://en.wikipedia.org/wiki/Notion_(productivity_software)",
+          "title": "Notion (productivity software ) - Wikipedia",
+          "content": "Notion is a productivity and note-taking application developed by Notion Labs, Inc. It serves as a workspace for notetaking, knowledge management, data organization, and project and task tracking."
         },
         {
           "id": "E2",
-          "source": "https://www.joinsecret.com/compare/clickup-vs-notion",
-          "title": "ClickUp vs Notion : Finding the Right Tool for Your Business",
-          "content": "Notion ’s paid plans cost between $8-$15/ user /per month; ClickUp ’s range from $7-12/ user /month. Ease of use. 4,0/5. ClickUp Excels in Real-Time Collaboration Compared to Notion . ClickUp 's dedicated real-time collaboration feature elevates its capabilities ."
+          "source": "https://www.notion.com/",
+          "title": "The AI workspace that works for you. | Notion",
+          "content": "Notion is always at home right in your browser. Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster."
         },
         {
           "id": "E3",
-          "source": "https://www.zenpilot.com/blog/clickup-vs-notion/",
-          "title": "ClickUp vs Notion (2026): The Honest Comparison | ZenPilot",
-          "content": "ClickUp Brain’s tiers ($9 or $28/user/month annual ) are clear add-ons you opt into. Notion bundled AI into Business at $ 20 / user - which means you’re paying for AI whether you use it or not, and it’s not available at all on the Plus plan. The honest take."
+          "source": "https://apps.microsoft.com/detail/xpdbvss44r0l9h",
+          "title": "Notion - Download and install on Windows | Microsoft Store",
+          "content": "Notion is the AI workspace that works for you. It's the one place to write, plan, centralize knowledge, and get projects done—with AI to find answers and automate tasks."
         },
         {
           "id": "E4",
-          "source": "https://atherobase.com/compare/clickup-vs-notion",
-          "title": "ClickUp vs Notion : Which Work Management Tool Wins in 2026?",
-          "content": "Monthly. Annual (Save 20 %). ClickUp . Choosing between them depends on whether your workflow requires ClickUp 's specific approach or Notion 's capabilities . Pricing & Value. ClickUp operates on a freemium billing model starting at $7/mont..."
+          "source": "https://notion.notion.site/",
+          "title": "Notion Official | Notion",
+          "content": "Got more questions? Message us in the app or email us at team@makenotion.com."
         },
         {
           "id": "E5",
-          "source": "https://www.techrepublic.com/article/clickup-vs-notion/",
-          "title": "ClickUp vs Notion : Which Tool Is Better For Your Team?",
-          "content": "ClickUp and Notion both have notable collaboration features such as real-time editing, commenting and task assignment. ClickUp allows mentions, threaded comments and sharing of task lists, enhancing team collaboration and communication."
+          "source": "https://play.google.com/store/apps/details?id=notion.id&hl=en-US",
+          "title": "Notion : Notes, Tasks, AI - Apps on Google Play",
+          "content": "Whether you’re tracking personal to-do lists, writing and organizing class notes, or managing projects with a team, Notion helps users plan work, stay organized, and achieve goals."
         },
         {
           "id": "E6",
-          "source": "https://www.cloudwards.net/clickup-vs-notion/",
-          "title": "fetched page",
-          "content": "ClickUp vs Notion in 2026 [Features, Pricing & More Compared] Project Management Project Management Software Comparisons ClickUp vs Notion in 2026: Features, Cost and Security Compared Cloudwards.net may earn a small commission from some purchases made through our site. However, any earnings do not affect how we review services. Learn more about our editorial integrity and research process . Project Management Menu Key Takeaways: Notion vs ClickUp The main difference between ClickUp and Notion is that ClickUp’s more advanced tools make it better for complex projects. ClickUp’s free plan is ideal for small teams, while Notion’s free option only supports individuals. ClickUp is better for project managers who like using native integrations and automations. Notion offers few native integrations and zero native automations. 4.45 3.85 Affordable paid plans Strong collaboration tools Multiple task view options Great for notes & to-do lists Decent project management Unlimited users on Team plan Visit ClickUp $7 / month (save 30%) (All Plans) Visit Notion App $10 / month (save 16%) (All Plans) ClickUp and Notion are both listed in our roundup of the best project management software for good reason, so we understand why you may be having difficulty choosing between these user-friendly project management tools. Join us to find out which option is best for you in our ClickUp vs Notion comparison. After extensive testing, we can tell you that ClickUp and Notion are great for remote teams who need powerful real-time document creation tools and solid task management features. They’re also good choices for those looking for competitively priced software. For us, one of the tools stands out just above the other. You can find out which software takes the crown below. 03/28/2025 Facts checked We added more details about each provider’s key features and offerings. 07/23/2025 Facts checked We updated the article to include the latest features for Notion and ClickUp. updates How Did We Rate ClickUp vs Notion? We have reviewed dozens of project management tools, including ClickUp (here’s our ClickUp review ) and Notion app. To glean our results, we use each platform for extended periods in real-world situations to analyze just how good — or bad — the software might be. 1 clickup.com $7 / month (save 30%) (All Plans) Visit ClickUp Review ClickUp 2 www.notion.so $10 / month (save 16%) (All Plans) Visit Notion App Review Notion App Notion vs ClickUp: Similarities & Differences All"
+          "source": "https://www.fahimai.com/notion-vs-clickup",
+          "title": "Notion vs ClickUp — I Spent $200 Testing These (2026) | Fahim AI",
+          "content": "Notion : Notion ’s free version is strong for individual users . The Plus plan at $10 per user per month adds collaborative blocks and unlimited file uploads. The business plan at $ 20 per user includes private team spaces. ClickUp : ClickUp is $3 cheaper per user on every paid plan ."
         },
         {
           "id": "E7",
-          "source": "https://www.joinsecret.com/compare/clickup-vs-notion",
+          "source": "https://thebusinessdive.com/notion-vs-clickup",
+          "title": "Notion Vs ClickUp : What I Discovered in 90 Days! (2026)",
+          "content": "Business plan : $ 20 per month/ user . Enterprise plan : Custom pricing . Clickup collaboration features - whiteboards. The whiteboard is a useful tool, particularly for remote teams. On the right side, you see who is currently working on the same project and show the cursor movements."
+        },
+        {
+          "id": "E8",
+          "source": "https://www.cloudwards.net/clickup-vs-notion/",
+          "title": "ClickUp vs Notion in 2026 [ Features , Pricing & More Compared]",
+          "content": "Notion vs ClickUp : Similarities & Differences. All project management tools are designed to help teams plan projects, track tasks and collaborate with team members."
+        },
+        {
+          "id": "E9",
+          "source": "https://www.zenpilot.com/blog/clickup-vs-notion/",
+          "title": "ClickUp vs Notion (2026): The Honest Comparison | ZenPilot",
+          "content": "Pricing transparency. ClickUp Brain’s tiers ($9 or $28/ user /month annual) are clear add-ons you opt into. Notion bundled AI into Business at $ 20 / user - which means you’re paying for AI whether you use it or not, and it’s not available at all on the Plus plan . The honest take."
+        },
+        {
+          "id": "E10",
+          "source": "https://monday.com/blog/project-management/whats-the-best-notion-alternative-for-your-team/",
+          "title": "Best Notion Alternatives for 2026 | monday.com Blog",
+          "content": "What’s the best Notion alternative? Discover the features and pricing plans of the top 10 work management platforms for your team."
+        },
+        {
+          "id": "E11",
+          "source": "https://www.fahimai.com/notion-vs-clickup",
           "title": "fetched page",
-          "content": "ClickUp vs Notion: Finding the Right Tool for Your Business Sign in Continue with Google Continue with Linkedin Continue with Email Sign in * Professional email * Password Forgot your password? Retrieve Log in Don’t have an account? Sign up Sign up Continue with Google Continue with Linkedin Continue with Email Sign up * First name * Last name * Professional email * Password I do not want to receive news and promotional information about Secret by email Join for free By clicking on the next button you accept our Terms of Use and confirm that you have read our Privacy Policy By clicking on the sign up button you accept our Terms of Use and confirm that you have read our Privacy Policy Already have an account? Sign in Suppose you’re looking to improve productivity in your business. Various tools are available to help you with task and project management, collaboration, document storage, note-taking, time tracking—the list goes on . But it’s easy to become overwhelmed trying to manage multiple stand-alone productivity tools, and it can quickly become counterproductive. The answer? An all-in-one tool that combines several of these functionalities. ClickUp and Notion are two such platforms ideally suited for project and task management. To decide which is best for your business, it helps to understand their features and differences. So, read on for our detailed comparison! 01 ClickUp vs Notion: overview 02 What's the difference between ClickUp and Notion? 03 ClickUp pros and cons 04 Notion pros and cons 05 ClickUp compared to Notion 06 Notion compared to ClickUp 07 Features comparison 08 ClickUp vs Notion: Which is the best for your business? 09 Alternatives to ClickUp & Notion 10 Promotions on Task Management software Start saving on the best SaaS Secret has already helped tens of thousands of startups save millions on the best SaaS like Microsoft Teams, Google Workspace & many more. Join Secret now to buy software the smart way. Join Secret 01 ClickUp vs Notion: overview When it comes to productivity and organization tools , ClickUp and Notion emerge as prominent contenders. With a plethora of features and capabilities provided by both platforms, deciphering the optimal choice in the ClickUp vs Notion duel requires careful consideration. To assist you in making an informed selection that aligns with your specific needs, we've crafted a comprehensive comparison table outlining the essential characteristics of each platform. Using a star-based rating system, co"
+          "content": "Notion vs ClickUp — I Spent $200 Testing These (2026) Notion vs ClickUp — I Spent $200 Testing These (2026) by Fahim Joharder | Last updated Apr 1, 2026 Winner 4.5 20,000+ Free Templates Built-in AI Writing Assistant All-in-One Workspace Drag & Drop Page Builder Unlimited Page History (Paid) Generous Free Plan Paid Plans from $10/user/month TRY NOW Runner Up 3.5 Built-in Time Tracking 100+ Automation Templates Gantt Charts & Timelines ClickUp Brain AI Assistant 1,000+ Integrations Free Forever Plan Paid Plans from $7/user/month TRY NOW 📊 Our Test Results: 🎯 Note Taking Speed: Notion 45 seconds vs ClickUp 70 seconds to create a structured note — Notion wins ⚡ Project Setup Time: Notion 3 minutes vs ClickUp 5 minutes for a new project board — Notion wins 🔒 Task Management Depth: Notion 6 task views vs ClickUp 15+ task views — ClickUp wins 📝 Time Tracking: Notion requires third-party apps vs ClickUp has built-in tracking — ClickUp wins 🤖 AI Features: Notion AI writes and summarizes vs ClickUp Brain manages tasks — Notion wins Choosing between Notion vs ClickUp can feel overwhelming. Both are powerful productivity tools that promise to help you stay organized. But they take very different approaches to task management, note taking, and project management. Notion is an all in one workspace built for personal notes, databases, and team collaboration. ClickUp is project management software designed to manage projects, track time, and handle complex tasks. I tested both platforms for four weeks to give you a full comparison. By the end, you will know exactly which tool fits your needs. Overview To give you the most accurate comparison, I tested Notion and ClickUp side by side. I used each platform for project management, note taking, and team communication. I created databases, set up kanban boards, and assigned tasks to team members. I also tested each tool’s free plan and paid plan to see which offers more value. This Notion vs ClickUp review shares my firsthand experience to help you make the right choice. Try Notion for free What is Notion? Notion is a note taking app that doubles as a project management platform. It gives you a single platform to create pages, build databases, and organize ideas. You can use Notion for personal notes, to do lists, journal entries, and meeting notes . Notion users also build wikis, contents tables, and collaborative workspace tools for their teams. The Notion workspace lets you create nested pages with bulleted lists, formatti"
         }
       ],
       "prices": [
         {
           "product": "Notion",
-          "per_user_monthly": 8.0,
-          "plan_name": "Paid Plans",
-          "citation_id": "E2",
-          "quote": "Notion ’s paid plans cost between $8-$15/ user /per month",
+          "per_user_monthly": 10.0,
+          "plan_name": "Plus",
+          "citation_id": "E6",
+          "quote": "The Plus plan at $10 per user per month adds collaborative blocks and unlimited file uploads.",
           "verified": true,
-          "annual_cost": 1920.0
+          "annual_cost": 2400.0
         },
         {
-          "product": "ClickUp",
-          "per_user_monthly": 7.0,
-          "plan_name": "",
-          "citation_id": "E2",
-          "quote": "ClickUp ’s range from $7-12/ user /month",
+          "product": "Notion",
+          "per_user_monthly": 20.0,
+          "plan_name": "Business",
+          "citation_id": "E7",
+          "quote": "Business plan : $ 20 per month/ user",
           "verified": true,
-          "annual_cost": 1680.0
+          "annual_cost": 4800.0
         }
       ],
       "audit": {
@@ -575,11 +768,11 @@
         "validate: products=['Notion', 'ClickUp'] criteria=['collaboration_capabilities', 'annual_cost_for_20_users'] pricing=True",
         "plan#1: web_search(Notion ClickUp collaboration capabilities annual cost 20 use)",
         "act: search 'Notion ClickUp collaboration capabilitie' -> 5 results",
-        "plan#2: fetch_url(https://www.cloudwards.net/clickup-vs-notion/)",
-        "act: fetch https://www.cloudwards.net/clickup-vs-no -> ok (E6)",
-        "plan#3: fetch_url(https://www.joinsecret.com/compare/clickup-vs-notion)",
-        "act: fetch https://www.joinsecret.com/compare/click -> ok (E7)",
-        "plan#4: fetch_url(https://www.joinsecret.com/compare/clickup-vs-notion)",
+        "plan#2: web_search(Notion ClickUp collaboration features pricing plan 20 users)",
+        "act: search 'Notion ClickUp collaboration features pr' -> 5 results",
+        "plan#3: fetch_url(https://www.fahimai.com/notion-vs-clickup)",
+        "act: fetch https://www.fahimai.com/notion-vs-clicku -> ok (E11)",
+        "plan#4: fetch_url(https://www.fahimai.com/notion-vs-clickup)",
         "act: duplicate action skipped (fetch_url)",
         "plan#5: finish()",
         "compare: 4 cells produced",
@@ -594,7 +787,7 @@
         "steps": 5,
         "retries": 0,
         "revisions": 0,
-        "seconds": 16.4
+        "seconds": 17.1
       }
     },
     {
@@ -768,7 +961,7 @@
         "steps": 7,
         "retries": 0,
         "revisions": 0,
-        "seconds": 10.4
+        "seconds": 10.5
       }
     }
   ]
