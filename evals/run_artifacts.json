@@ -17,9 +17,6 @@
       },
       "metrics": {
         "capability_accuracy": 0.5,
-        "hallucination_rate": 0.0,
-        "retrieval_recall": 0.5,
-        "grounding_rate": 1.0
       },
       "pricing": null,
       "injection_events": [],
