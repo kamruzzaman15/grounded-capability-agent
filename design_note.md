@@ -50,9 +50,11 @@ if retries are exhausted. Duplicate actions are skipped and a no-progress stall
 counter prevents an infinite loop.
 
 The live evaluator now consumes the failure specifications in `cases.json`.
-Case 4 injects one Mural timeout; the latest run recorded the failure, retried
-once, recovered, and passed all five recovery assertions. Case 8 returns repeated
-irrelevant search results and asserts bounded termination with unverified cells.
+Case 2 is configured to inject one Mural timeout when the planner fetches a
+matching URL. The latest run never selected a Mural URL, so the failure-detected
+assertion correctly failed rather than awarding recovery credit. Case 5 returns
+repeated irrelevant search results and asserts bounded termination with
+unverified cells.
 This is complemented by deterministic mocked tests that exercise retry,
 fallback, quotation rejection, entailment rejection, pricing guards, and
 clarification without Ollama or network access.
@@ -66,11 +68,11 @@ grounding rate. The report includes model configuration, operational statistics,
 injected events, and the per-node trace; a JSON artifact preserves the complete
 answer, evidence, prices, and audit.
 
-The latest hardened run with Qwen 2.5 14B and Gemma 3 4B passed 5 of 8 cases in
-135.9 seconds. It demonstrated recovery and zero hallucination on the scored
-factual cases, but failed full factual coverage in the Notion/ClickUp and
-Figma/Canva cases. The pricing case found both expected totals but failed stricter
-plan-name, billing-context, and lowest-plan-selection assertions. Those failures
+The latest reduced run with Qwen 2.5 14B and Gemma 3 4B passed 2 of 5 active
+cases in 65.2 seconds. Case 1 had zero hallucination but only 17% capability
+accuracy. Case 2 failed because its configured Mural injection was never
+exercised. The pricing case matched ClickUp's expected total but selected an
+unsupported Notion price and omitted ClickUp's plan name. These failures
 are useful: the evaluator now rejects superficially correct output instead of
 awarding a pass because the expected number appeared somewhere.
 

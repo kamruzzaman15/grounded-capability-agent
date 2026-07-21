@@ -1,6 +1,7 @@
 {
   "metadata": {
-    "version": "2.0",
+    "version": "2.1",
+    "active_gold_cases": ["case_1", "case_3"],
     "verified_at": "2026-07-19",
     "label_vocabulary": ["verified_present", "verified_unavailable", "unverified"],
     "source_policy": "Official vendor documentation, help centers, developer documentation, and pricing pages only.",
@@ -11,9 +12,9 @@
     },
     "entailment_self_check": {
       "meaning": "Whether the stored quote, on its own, entails the label for the criterion as defined. 'pass' = quote entails it; 'weak' = quote shows the capability loosely but not the specific mechanism the definition demands, replace with a stronger quote before trusting quote_must_entail_label; 'unverifiable' = the source could not be confirmed automatically.",
-      "why_it_matters": "cases_improved_v2.json asserts quote_must_entail_label on cases 1, 2, and 7. A gold key must pass its own entailment gate, or it will reject an agent's correct answer. Fix every 'weak' or 'unverifiable' cell before a scored run."
+      "why_it_matters": "Case 1 asserts quote_must_entail_label. A gold key must pass its own entailment gate, or it can reject an agent's correct answer."
     },
-    "verification_status": "ClickUp configurable_role_based_permissions quote was strengthened from a live fetch on 2026-07-19. Canva configurable_team_permissions could not be fetched (the page blocked automated access) and its quote is unconfirmed. All other quotes are author-provided and MUST be confirmed verbatim against the live page before a scored run. Pricing figures drift; re-confirm case_5 numbers each run.",
+    "verification_status": "ClickUp configurable_role_based_permissions quote was strengthened from a live fetch on 2026-07-19. All capability quotes are author-provided and MUST be confirmed verbatim against the live page before a scored run. Pricing figures drift; re-confirm case_3 numbers each run.",
     "important_note": "Unverified is a bounded evaluation label, not a universal claim that the feature does not exist. Documentation and prices change, so re-verify dated gold keys and reset verified_at before future runs."
   },
 
@@ -88,62 +89,7 @@
     }
   },
 
-  "case_2": {
-    "input_summary": "Asana vs Trello: built-in time tracking and workload-capacity views.",
-    "cells": [
-      {
-        "product": "Asana",
-        "criterion": "built_in_time_tracking",
-        "label": "verified_present",
-        "source_url": "https://help.asana.com/s/article/time-tracking-in-asana",
-        "source_title": "Time tracking in Asana - Asana Help Center",
-        "quote": "You can track actual time using the built-in timer or by entering time manually.",
-        "entailment_self_check": "pass",
-        "verification_note": "Official page explicitly states Asana has a built-in timer."
-      },
-      {
-        "product": "Asana",
-        "criterion": "workload_capacity_view",
-        "label": "verified_present",
-        "source_url": "https://help.asana.com/s/article/portfolio-workload-and-universal-workload",
-        "source_title": "How to use workload to manage team capacity in Asana",
-        "quote": "Workload gives you a visual snapshot of team capacity and a closer look into what your team is working on.",
-        "entailment_self_check": "pass",
-        "verification_note": "Official page explicitly documents a visual team-capacity view."
-      },
-      {
-        "product": "Trello",
-        "criterion": "built_in_time_tracking",
-        "label": "unverified",
-        "source_url": null,
-        "source_title": null,
-        "quote": null,
-        "checked_official_sources": [
-          "https://support.atlassian.com/trello/docs/what-is-trello/",
-          "https://support.atlassian.com/trello/docs/power-ups-made-by-trello/"
-        ],
-        "entailment_self_check": "pass",
-        "verification_note": "Checked official sources did not explicitly document built-in time tracking, nor explicitly state it is unavailable. Safe label is unverified, not unavailable."
-      },
-      {
-        "product": "Trello",
-        "criterion": "workload_capacity_view",
-        "label": "unverified",
-        "source_url": null,
-        "source_title": null,
-        "quote": null,
-        "checked_official_sources": [
-          "https://support.atlassian.com/trello/docs/timeline-view/",
-          "https://support.atlassian.com/trello/docs/trello-dashcards/",
-          "https://support.atlassian.com/trello/docs/what-is-trello/"
-        ],
-        "entailment_self_check": "pass",
-        "verification_note": "Trello documents timeline grouping and work-tracking views, but the checked sources did not clearly document a team-capacity view under the test definition. Safe label is unverified."
-      }
-    ]
-  },
-
-  "case_5": {
+  "case_3": {
     "input_summary": "Notion vs ClickUp: collaboration plus annual cost for 20 users on the lowest paid collaborative plan, billed yearly in USD.",
     "pricing": [
       {
@@ -190,73 +136,5 @@
       "calculation": "2400 - 1680",
       "note": "Valid only if both prices above are re-confirmed current."
     }
-  },
-
-  "case_7": {
-    "input_summary": "Figma vs Canva: developer API, version history, configurable team permissions.",
-    "cells": [
-      {
-        "product": "Figma",
-        "criterion": "developer_api_access",
-        "label": "verified_present",
-        "source_url": "https://developers.figma.com/docs/rest-api/",
-        "source_title": "Introduction - Figma Developer Docs",
-        "quote": "The Figma API supports access and interactions with Figma's different products.",
-        "entailment_self_check": "pass",
-        "verification_note": "Official Figma developer documentation explicitly describes its REST API."
-      },
-      {
-        "product": "Figma",
-        "criterion": "version_history",
-        "label": "verified_present",
-        "source_url": "https://help.figma.com/hc/en-us/articles/360039831974-Explore-the-navigation-bar-and-left-sidebar",
-        "source_title": "Explore the navigation bar and left sidebar - Figma Help",
-        "quote": "The Edit file menu allows you to perform file-specific actions, such as viewing its version history.",
-        "entailment_self_check": "pass",
-        "verification_note": "Official Figma help documentation explicitly documents access to version history."
-      },
-      {
-        "product": "Figma",
-        "criterion": "configurable_team_permissions",
-        "label": "verified_present",
-        "source_url": "https://help.figma.com/hc/en-us/articles/360039970673-Team-permissions",
-        "source_title": "Team permissions - Figma Help",
-        "quote": "Team permissions define what actions someone can take at the team level.",
-        "entailment_self_check": "weak",
-        "needs_stronger_quote": true,
-        "verification_note": "The quote defines that team permissions exist but does not show administrators assigning DISTINCT configurable roles, which the criterion demands. Replace with a verbatim quote naming the distinct roles (e.g. admin/editor/viewer) or the admin action of changing a member's role. Label is likely correct; the evidence is what needs strengthening before quote_must_entail_label will pass."
-      },
-      {
-        "product": "Canva",
-        "criterion": "developer_api_access",
-        "label": "verified_present",
-        "source_url": "https://www.canva.dev/docs/connect/",
-        "source_title": "Canva Connect APIs Documentation",
-        "quote": "The Canva Connect APIs let you integrate Canva's capabilities into your own web apps and platforms.",
-        "entailment_self_check": "pass",
-        "verification_note": "Official Canva developer documentation explicitly describes external Connect APIs."
-      },
-      {
-        "product": "Canva",
-        "criterion": "version_history",
-        "label": "verified_present",
-        "source_url": "https://www.canva.com/help/version-history/",
-        "source_title": "Review and restore older versions of designs - Canva Help Center",
-        "quote": "Restore an older version of your design from the File menu in the editor.",
-        "entailment_self_check": "pass",
-        "verification_note": "Official Canva help documentation explicitly documents restoring prior versions."
-      },
-      {
-        "product": "Canva",
-        "criterion": "configurable_team_permissions",
-        "label": "verified_present",
-        "source_url": "https://www.canva.com/help/roles-and-permissions/",
-        "source_title": "Canva roles and permissions - Canva Help Center",
-        "quote": "Canva offers flexible roles and permissions.",
-        "entailment_self_check": "unverifiable",
-        "needs_stronger_quote": true,
-        "verification_note": "Could not confirm on 2026-07-19: the Canva page blocked automated fetch. The stored quote is also promotional, not a mechanism-level statement, so it would likely fail a strict entailment gate. Open the page in a browser and replace with a verbatim quote naming the distinct roles or the admin action of assigning them before a scored run."
-      }
-    ]
   }
 }

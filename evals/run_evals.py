@@ -7,7 +7,7 @@ Two tracks:
 
 Factual and behavioral non-clarify cases are SEEDED with the case's canonical
 products and criteria (from cases.json) so agent cells line up with the gold key
-by exact criterion key. Case 6 (known_gap) is seeded with empty criteria so it
+by exact criterion key. Case 4 (known_gap) is seeded with empty criteria so it
 must clarify. The parse step is only exercised implicitly; seeding keeps scoring
 deterministic, which is standard for an eval harness.
 
@@ -85,7 +85,7 @@ def score_factual(case, result):
 
 
 def score_pricing(result):
-    gold = GOLD.get("case_5", {}).get("pricing", [])
+    gold = GOLD.get("case_3", {}).get("pricing", [])
     lines = " ".join(result["final"].get("cost", {}).get("lines", []))
     hits = 0
     for g in gold:
@@ -102,7 +102,7 @@ def check_behavioral(case, result):
     for c in final.get("cells", []):
         if c["label"] in POLARIZED and not c.get("citation_id"):
             return False
-    if case["id"] == 8:  # loop / no-progress: everything unverified, caps held
+    if case["id"] == 5:  # loop / no-progress: everything unverified, caps held
         all_unverified = all(c["label"] == "unverified" for c in final.get("cells", []))
         within = (result["stats"]["tool_calls"] <= case["limits"]["max_total_tool_calls"]
                   and result["stats"]["steps"] <= case["limits"]["max_graph_steps"])
@@ -210,7 +210,7 @@ def evaluate_assertions(case, result, injection_events):
                        if g["label"] == "unverified"}
     got_by_pair = {(norm(c["product"]), norm(c["criterion"])): c for c in cells}
     verified_prices = [price for price in prices if price.get("verified")]
-    pricing_gold = GOLD.get("case_5", {}).get("pricing", [])
+    pricing_gold = GOLD.get("case_3", {}).get("pricing", [])
     checks = {}
 
     for name in case.get("assertions", {}):
@@ -341,7 +341,7 @@ def main():
                 result = run_agent(case["input"], seed=seed)
 
             metrics = score_factual(case, result) if track == "factual" else None
-            pricing = score_pricing(result) if cid == 5 else None
+            pricing = score_pricing(result) if cid == 3 else None
             assertions = evaluate_assertions(case, result, injection_events)
             passed = bool(assertions) and all(assertions.values())
             outcome = "PASS" if passed else "FAIL"

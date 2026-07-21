@@ -49,9 +49,9 @@ def test_finalize_replaces_stale_draft_and_citations():
     assert "unverified" in out["draft"]
 
 
-def test_case_four_assertions_require_observed_recovery():
+def test_recovery_case_assertions_require_observed_recovery():
     case = {
-        "id": 4,
+        "id": 2,
         "assertions": {
             "failure_detected": True,
             "retry_count_at_least": 1,

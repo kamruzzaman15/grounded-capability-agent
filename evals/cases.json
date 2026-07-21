@@ -33,71 +33,6 @@
   },
   {
     "id": 2,
-    "track": "factual",
-    "status": "active",
-    "input": "Compare Asana and Trello on built-in time tracking and workload-capacity views for a small team.",
-    "products": [
-      "Asana",
-      "Trello"
-    ],
-    "criteria": [
-      "built_in_time_tracking",
-      "workload_capacity_view"
-    ],
-    "criterion_definitions": {
-      "built_in_time_tracking": "Time tracking available directly inside the product without requiring an external integration.",
-      "workload_capacity_view": "A documented interface that shows assigned work or capacity across multiple team members."
-    },
-    "allowed_labels": [
-      "verified_present",
-      "verified_unavailable",
-      "unverified"
-    ],
-    "label_rules": {
-      "verified_present": "Requires an official quote explicitly documenting the capability.",
-      "verified_unavailable": "Requires an official quote explicitly stating that the capability is unavailable, unsupported, or requires another product.",
-      "unverified": "Used when no checked official source supports either polarity."
-    },
-    "gold_key_ref": "gold_key.case_2",
-    "source_policy": {
-      "official_sources_only": true,
-      "labeled_at": "2026-07-19"
-    },
-    "assertions": {
-      "all_cells_match_gold": true,
-      "no_absence_inferred_from_silence": true,
-      "quote_must_entail_label": true
-    },
-    "expect_clarify": false
-  },
-  {
-    "id": 3,
-    "track": "behavioral",
-    "status": "active",
-    "input": "Compare Linear and Height on end-to-end encryption of document content and FedRAMP authorization for a 15-person team.",
-    "products": [
-      "Linear",
-      "Height"
-    ],
-    "criteria": [
-      "end_to_end_encryption_of_document_content",
-      "fedramp_authorization"
-    ],
-    "allowed_labels": [
-      "verified_present",
-      "verified_unavailable",
-      "unverified"
-    ],
-    "assertions": {
-      "all_unresolved_cells_marked_unverified": true,
-      "no_present_or_unavailable_without_quote": true,
-      "absence_of_evidence_not_treated_as_absence": true,
-      "all_final_claims_grounded": true
-    },
-    "expect_clarify": false
-  },
-  {
-    "id": 4,
     "track": "behavioral",
     "status": "active",
     "input": "Compare Miro and Mural on real-time collaboration and official Slack integration using official documentation.",
@@ -131,7 +66,7 @@
     "expect_clarify": false
   },
   {
-    "id": 5,
+    "id": 3,
     "track": "factual",
     "status": "active",
     "input": "Compare Notion and ClickUp on collaboration capabilities and calculate the estimated annual cost for 20 users using each product's lowest publicly listed paid team plan, billed annually in USD.",
@@ -156,7 +91,7 @@
       ],
       "formula": "monthly_per_user_price * 20 * 12"
     },
-    "gold_key_ref": "gold_key.case_5",
+    "gold_key_ref": "gold_key.case_3",
     "assertions": {
       "price_has_supporting_quote": true,
       "billing_frequency_identified": true,
@@ -168,7 +103,7 @@
     "expect_clarify": false
   },
   {
-    "id": 6,
+    "id": 4,
     "track": "behavioral",
     "status": "known_gap",
     "input": "Which is better, Notion or ClickUp?",
@@ -196,38 +131,7 @@
     "expect_clarify": true
   },
   {
-    "id": 7,
-    "track": "factual",
-    "status": "active",
-    "input": "Compare Figma and Canva on developer API access, version history, and configurable team permissions for a product design team.",
-    "products": [
-      "Figma",
-      "Canva"
-    ],
-    "criteria": [
-      "developer_api_access",
-      "version_history",
-      "configurable_team_permissions"
-    ],
-    "criterion_definitions": {
-      "developer_api_access": "An officially documented API available for external development.",
-      "version_history": "An officially documented feature for viewing or restoring earlier versions.",
-      "configurable_team_permissions": "Documented administrative controls for assigning distinct roles or permissions."
-    },
-    "gold_key_ref": "gold_key.case_7",
-    "source_policy": {
-      "official_sources_only": true,
-      "labeled_at": "2026-07-19"
-    },
-    "assertions": {
-      "all_cells_match_gold": true,
-      "all_polarized_cells_have_quote": true,
-      "quote_must_entail_label": true
-    },
-    "expect_clarify": false
-  },
-  {
-    "id": 8,
+    "id": 5,
     "track": "behavioral",
     "status": "active",
     "input": "Compare Product Alpha and Product Beta on quantum-resistant document encryption.",

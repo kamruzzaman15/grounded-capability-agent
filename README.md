@@ -22,9 +22,10 @@ The final model configuration is:
 - Grounding reviewer: `gemma3:4b`
 
 The models come from different families so the reviewer is less likely to repeat
-the generator's mistakes. The latest hardened live evaluation passed 5 of 8
-cases. It used 72 LLM calls, 45 tool calls, 51 planning steps, 7 retries, and
-finished in 135.9 seconds. All factual runs had a final grounding rate of 100%;
+the generator's mistakes. The active evaluation set is numbered 1 through 5.
+The latest reduced live evaluation passed 2 of 5 cases. It used 39 LLM calls,
+21 tool calls, 27 planning steps, 4 retries, and finished in 65.2 seconds.
+All factual runs had a final grounding rate of 100%;
 factual accuracy was still limited by retrieval coverage, as described below.
 
 
@@ -149,9 +150,11 @@ retrieval, official-source compliance, or agreement with a dated gold key.
 The live evaluation harness consumes `failure_injection` from
 `evals/cases.json`:
 
-- Case 4 injects one timeout for a Mural page. The latest run detected it,
-  retried once, recovered, and passed all five recovery assertions.
-- Case 8 replaces search output with repeated irrelevant results. The agent must
+- Case 2 is configured to inject one timeout for a Mural page. The injection is
+  triggered only if the planner fetches a matching URL. In the latest run the
+  planner never fetched Mural, so the failure-detected assertion correctly
+  failed; an unrelated Miro fetch used two ordinary retries.
+- Case 5 replaces search output with repeated irrelevant results. The agent must
   terminate within its limits and keep both fictional-product cells unverified.
 
 Injected events are saved in `evals/run_artifacts.json`; retry and fallback
@@ -179,16 +182,13 @@ Metrics are:
 - operational statistics: LLM calls, tool calls, steps, retries, revisions, and
   wall-clock duration
 
-The eight cases cover:
+The five active cases cover:
 
 1. Notion vs. ClickUp capability comparison
-2. present-vs-unverified behavior for Asana and Trello
-3. undocumented security capabilities that must remain unverified
-4. an injected page timeout and recovery path
-5. cited pricing and annual-cost calculation
-6. an underspecified request requiring clarification
-7. a different product category: Figma vs. Canva
-8. repeated irrelevant results and bounded termination
+2. an injected page timeout and recovery path
+3. cited pricing and annual-cost calculation
+4. an underspecified request requiring clarification
+5. repeated irrelevant results and bounded termination
 
 ### Latest live results
 
@@ -196,19 +196,16 @@ Run on 2026-07-19 with `qwen2.5:14b` and `gemma3:4b`:
 
 | Case | Result | Main outcome |
 | --- | --- | --- |
-| 1 | FAIL | 33% accuracy, 0% hallucination; retrieval missed four gold cells |
-| 2 | PASS | 100% accuracy, recall, and grounding |
-| 3 | PASS | all four unresolved security cells remained unverified |
-| 4 | PASS | injected timeout observed; 1 retry; 5/5 assertions |
-| 5 | FAIL | both expected totals appeared, but plan/billing/selection assertions failed |
-| 6 | PASS | clarification with no research or recommendation |
-| 7 | FAIL | 33% accuracy; research under-covered Canva |
-| 8 | PASS | five injected junk searches; bounded, all unverified |
+| 1 | FAIL | 17% accuracy, 0% hallucination; retrieval found one of six gold cells |
+| 2 | FAIL | planner never fetched Mural; injection and retry assertions failed |
+| 3 | FAIL | 1/2 expected totals; ClickUp matched, Notion and plan metadata did not |
+| 4 | PASS | clarification with no research or recommendation |
+| 5 | PASS | five injected junk searches; bounded, all unverified |
 
-Case 5 exposed an important failure: the model extracted four price options
-instead of selecting exactly the lowest paid plan per product. Although the
-expected `$2,400` and `$1,680` totals appeared, the case correctly failed because
-plan names, annual billing context, and plan selection were incomplete.
+Case 3 exposed an important failure: the model calculated `$1,680` for ClickUp
+but omitted its plan name, and it selected an unsupported `$8` Notion figure
+instead of the `$10` gold-key price. The case correctly failed plan-name and
+expected-calculation assertions.
 
 Live-web results are nondeterministic and documentation changes. The gold key is
 dated, two permission quotations are marked weak/unverifiable, and pricing is
@@ -237,7 +234,7 @@ selection, and pricing-plan selection account for the most visible failures.
 ## Known limitations and deliberate stopping point
 
 - The planner can finish before every product/criterion pair has received a
-  targeted official-source search. This caused under-retrieval in Cases 1 and 7.
+  targeted official-source search. This caused under-retrieval in Case 1.
 - Official-domain and product/source ownership checks are not yet a deterministic
   grounding gate. A quote can be grounded while coming from a weaker source.
 - Pricing extraction can return extra plans and does not yet deterministically
@@ -246,7 +243,7 @@ selection, and pricing-plan selection account for the most visible failures.
   but may be blocked or JavaScript-rendered.
 - The reviewer is still an LLM. The quotation gate is deterministic and
   load-bearing; semantic entailment is not infallible.
-- Multi-turn resume is not implemented. Case 6 asks a clarifying question and
+- Multi-turn resume is not implemented. Case 4 asks a clarifying question and
   ends; it does not resume the same graph after the user replies.
 - Duplicate-action detection is exact-string based rather than semantic.
 - Conflicting-source detection and a browser/Playwright fallback were left as
@@ -269,7 +266,7 @@ product/criterion pair has at least one targeted research attempt.
 | `src/nodes.py` | planning, action, comparison, audit, revision, final rendering |
 | `src/tools.py` | web search, fetch, and calculator tools |
 | `src/prompts.py` | model task prompts |
-| `evals/cases.json` | eight inputs, assertions, and failure specifications |
+| `evals/cases.json` | five active inputs, assertions, and failure specifications |
 | `evals/gold_key.json` | dated factual answer key |
 | `evals/run_evals.py` | live scoring, injection, reports, and artifacts |
 | `evals/results.md` | latest readable live evaluation |
