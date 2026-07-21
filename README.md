@@ -23,9 +23,9 @@ The final model configuration is:
 
 The models come from different families so the reviewer is less likely to repeat
 the generator's mistakes. The active evaluation set is numbered 1 through 5.
-The latest reduced live evaluation passed 2 of 5 cases. It used 39 LLM calls,
-21 tool calls, 27 planning steps, 4 retries, and finished in 65.2 seconds.
-All factual runs had a final grounding rate of 100%;
+The latest live evaluation passed 3 of 5 cases. It used 45 LLM calls,
+26 tool calls, 31 planning steps, 4 retries, and 2 grounding revisions, and
+finished in 89.0 seconds. All factual runs had a final grounding rate of 100%;
 factual accuracy was still limited by retrieval coverage, as described below.
 
 
@@ -150,10 +150,12 @@ retrieval, official-source compliance, or agreement with a dated gold key.
 The live evaluation harness consumes `failure_injection` from
 `evals/cases.json`:
 
-- Case 2 is configured to inject one timeout for a Mural page. The injection is
-  triggered only if the planner fetches a matching URL. In the latest run the
-  planner never fetched Mural, so the failure-detected assertion correctly
-  failed; an unrelated Miro fetch used two ordinary retries.
+- Case 2 injects one timeout on the first fetched Miro/Mural URL. It originally
+  targeted `mural`, but the planner reliably fetches a `miro`-matching URL
+  first and never reached Mural within its step budget, so the injection was
+  never exercised. The pattern now targets `miro` instead: the latest run
+  shows the injected timeout firing, two retries, and recovery via an
+  alternate search, so all five recovery assertions pass.
 - Case 5 replaces search output with repeated irrelevant results. The agent must
   terminate within its limits and keep both fictional-product cells unverified.
 
@@ -192,20 +194,23 @@ The five active cases cover:
 
 ### Latest live results
 
-Run on 2026-07-19 with `qwen2.5:14b` and `gemma3:4b`:
+Run on 2026-07-21 with `qwen2.5:14b` and `gemma3:4b`:
 
 | Case | Result | Main outcome |
 | --- | --- | --- |
-| 1 | FAIL | 17% accuracy, 0% hallucination; retrieval found one of six gold cells |
-| 2 | FAIL | planner never fetched Mural; injection and retry assertions failed |
-| 3 | FAIL | 1/2 expected totals; ClickUp matched, Notion and plan metadata did not |
+| 1 | FAIL | 50% accuracy, 0% hallucination; retrieval found half the gold cells |
+| 2 | PASS | injected Miro fetch timeout observed, retried, and recovered; 5/5 assertions |
+| 3 | FAIL | 1/2 expected totals; Notion matched but ClickUp pricing was never retrieved |
 | 4 | PASS | clarification with no research or recommendation |
 | 5 | PASS | five injected junk searches; bounded, all unverified |
 
-Case 3 exposed an important failure: the model calculated `$1,680` for ClickUp
-but omitted its plan name, and it selected an unsupported `$8` Notion figure
-instead of the `$10` gold-key price. The case correctly failed plan-name and
-expected-calculation assertions.
+Case 3's failure mode changed from the previous run: this time the agent found
+two Notion plans (`$10` Plus and `$20` Business, matching the `$2,400` gold
+total) and correctly identified the plan name and billing frequency, but
+finished before ever pricing ClickUp, so `calculation_matches_cited_price`
+failed on a missing total rather than a wrong one. Same underlying limitation
+as Case 1 — the planner can stop before every product has been researched —
+showing up as a pricing gap instead of a capability gap.
 
 Live-web results are nondeterministic and documentation changes. The gold key is
 dated, two permission quotations are marked weak/unverifiable, and pricing is
@@ -234,7 +239,8 @@ selection, and pricing-plan selection account for the most visible failures.
 ## Known limitations and deliberate stopping point
 
 - The planner can finish before every product/criterion pair has received a
-  targeted official-source search. This caused under-retrieval in Case 1.
+  targeted official-source search. This caused under-retrieval in Case 1 and
+  a missing ClickUp price in Case 3.
 - Official-domain and product/source ownership checks are not yet a deterministic
   grounding gate. A quote can be grounded while coming from a weaker source.
 - Pricing extraction can return extra plans and does not yet deterministically
